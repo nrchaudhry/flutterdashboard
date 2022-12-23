@@ -1,9 +1,7 @@
 const String oauthURL = "http://api.cwiztech.com:8080/v1/";
-const String authbasic = 'VXNlck1hbmFnbWVudDpzZWNyZXQ=';
-const String username = "uog";
-const String password = "UOG123";
+const String authBasic = 'VXNlck1hbmFnbWVudDpzZWNyZXQ=';
 
-const String applicationID = 'KairaGroupMobileApp';
+const String applicationCode = 'KairaGroupMobileApp';
 const String applicationTitle = 'Flutter Dashboard';
 
 const String companyName = 'Compuwiz Technologies';
