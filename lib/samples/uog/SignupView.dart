@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-// ignore: depend_on_referenced_packages
-//import 'package:loginsecreen_userinterface/signup.dart';
-//import 'package:login_userinterface/signup.dart';
+//import 'package:login_userinterface/login.dart';
 
-import 'SignupView.dart';
+import 'LoginView.dart';
+//import 'package:flutter/src/widgets/container.dart';
+//import 'package:flutter/src/widgets/framework.dart';
 
-class loginsecreen extends StatefulWidget {
-  const loginsecreen({super.key});
+class signup extends StatefulWidget {
+  const signup({super.key});
 
   @override
-  State<loginsecreen> createState() => _loginsecreenState();
+  State<signup> createState() => _signupState();
 }
 
-class _loginsecreenState extends State<loginsecreen> {
-  bool hiddenpassword = true;
+class _signupState extends State<signup> {
+  bool hidepassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +30,7 @@ class _loginsecreenState extends State<loginsecreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Image(
-                      //      height: 200,
+                      height: 100,
                       width: 100,
                       image: AssetImage('assets/imgs/uog/UOG.png')),
                   const SizedBox(
@@ -43,7 +41,7 @@ class _loginsecreenState extends State<loginsecreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "Universiy \nOf Gujrat",
+                        "University \nOf Gujrat",
                         style: TextStyle(
                             fontSize: 24,
                             color: Color(0xff2D3142),
@@ -58,7 +56,7 @@ class _loginsecreenState extends State<loginsecreen> {
               ),
               const Center(
                   child: Text(
-                "Login Page",
+                "Signup Page",
                 style: TextStyle(
                     fontSize: 24,
                     color: Color(0xffF9703B),
@@ -66,6 +64,51 @@ class _loginsecreenState extends State<loginsecreen> {
               )),
               const SizedBox(
                 height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                child: TextFormField(
+                  keyboardType: TextInputType.name,
+                  decoration: InputDecoration(
+                      hintText: 'Name',
+                      fillColor: const Color(0xffF8F9FA),
+                      filled: true,
+                      prefixIcon: const Icon(
+                        Icons.person,
+                        color: Color(0xff323F4B),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0xffE4E7EB)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: Color(0xffE4E7EB)),
+                          borderRadius: BorderRadius.circular(10))),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                child: TextFormField(
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                      hintText: 'Phone',
+                      fillColor: const Color(0xffF8F9FA),
+                      filled: true,
+                      prefixIcon: const Icon(
+                        Icons.phone,
+                        color: Color(0xff323F4B),
+                      ),
+                      //        suffixIcon: Icon(Icons.visibility_off_outlined),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: Color(0xffE4E7EB)),
+                          borderRadius: BorderRadius.circular(10)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: Color(0xffE4E7EB)),
+                          borderRadius: BorderRadius.circular(10))),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -93,7 +136,7 @@ class _loginsecreenState extends State<loginsecreen> {
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: TextFormField(
                   keyboardType: TextInputType.visiblePassword,
-                  obscureText: hiddenpassword,
+                  obscureText: hidepassword,
                   decoration: InputDecoration(
                       hintText: 'Password',
                       suffixIcon: InkWell(
@@ -116,21 +159,6 @@ class _loginsecreenState extends State<loginsecreen> {
                 ),
               ),
               const SizedBox(
-                height: 15,
-              ),
-              Center(
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Forgot Password',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xff323F4B),
-                        decoration: TextDecoration.underline),
-                  ),
-                ),
-              ),
-              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -143,10 +171,10 @@ class _loginsecreenState extends State<loginsecreen> {
                     child: TextButton(
                         onPressed: () {},
                         child: const Text(
-                          'Log In',
+                          'Sign Up',
                           style: TextStyle(
-                              color: Colors.white,
                               fontWeight: FontWeight.bold,
+                              color: Colors.white,
                               fontSize: 16),
                         ))),
               ),
@@ -165,10 +193,10 @@ class _loginsecreenState extends State<loginsecreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const signup()));
+                                builder: (context) => loginsecreen()));
                       },
                       child: const Text(
-                        'Sign Up',
+                        'Log In',
                         style:
                             (TextStyle(fontSize: 16, color: Color(0xffF9703B))),
                       )),
@@ -183,7 +211,7 @@ class _loginsecreenState extends State<loginsecreen> {
 
   void _tooglepassword() {
     setState(() {
-      hiddenpassword = !hiddenpassword;
+      hidepassword = !hidepassword;
     });
   }
 }
