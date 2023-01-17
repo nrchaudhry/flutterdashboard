@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 // ignore: depend_on_referenced_packages
-//import 'package:loginsecreen_userinterface/signup.dart';
+//import 'package:LoginView_userinterface/signup.dart';
 //import 'package:login_userinterface/signup.dart';
 
+import 'package:flutterdashboard/login/LoginService.dart';
 import 'SignupView.dart';
 
-class loginsecreen extends StatefulWidget {
-  const loginsecreen({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<loginsecreen> createState() => _loginsecreenState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _loginsecreenState extends State<loginsecreen> {
+class _LoginViewState extends State<LoginView> {
   bool hiddenpassword = true;
   @override
   Widget build(BuildContext context) {
@@ -141,7 +142,10 @@ class _loginsecreenState extends State<loginsecreen> {
                     color: const Color(0xffF9703B)),
                 child: Center(
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                           LoginService.login("uog", "UOG123");
+                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const LoginView()));
+                        },
                         child: const Text(
                           'Log In',
                           style: TextStyle(

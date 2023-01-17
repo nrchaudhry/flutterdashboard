@@ -64,7 +64,7 @@ class LoginService {
     } on SocketException {
       throw FetchDataException('No Internet Connection');
     }
-    return responseJson;
+    return true;
   }
 
 }

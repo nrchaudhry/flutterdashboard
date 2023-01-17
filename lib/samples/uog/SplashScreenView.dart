@@ -8,20 +8,20 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'LoginView.dart';
 
-class mysplash extends StatefulWidget {
-  const mysplash({super.key});
+class SplashScreenView extends StatefulWidget {
+  const SplashScreenView({super.key});
 
   @override
-  State<mysplash> createState() => _mysplashState();
+  State<SplashScreenView> createState() => _SplashScreenViewState();
 }
 
 // ignore: camel_case_types
-class _mysplashState extends State<mysplash> {
+class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState() {
     Timer(const Duration(seconds: 5), (() {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const loginsecreen()));
+          MaterialPageRoute(builder: (_) => const LoginView()));
     }));
     super.initState();
   }
