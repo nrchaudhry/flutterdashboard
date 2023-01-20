@@ -13,7 +13,7 @@ Color kBlackColor = Colors.black;
 Color kTextFieldColor = Color(0xFF979797);
 Color kBorderTextFieldColor = Color.fromARGB(106, 151, 151, 151);
 Color kLightWhit = Color.fromARGB(255, 229, 229, 229);
-
+Color splash3 = Colors.orange;
 const kDefaultPadding = EdgeInsets.symmetric(horizontal: 30);
 TextStyle regulartext = TextStyle(
     color: kBlackColor,

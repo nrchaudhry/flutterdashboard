@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdashboard/samples/uog/Dashboard.dart';
 //import 'package:login_userinterface/login.dart';
 
 import 'LoginView.dart';
@@ -24,25 +23,32 @@ class _signupState extends State<signup> {
           child: Column(
             children: [
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Image(
-                      height: 100,
-                      width: 100,
-                      image: AssetImage('assets/imgs/uog/UOG.png')),
+                  //     const Image(
+                  //       height: 100,
+                  //     width: 100,
+                  //   image: AssetImage('assets/imgs/uog/UOG.png')),
                   const SizedBox(
                     width: 10,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: const [
+                      Image(
+                          height: 200,
+                          width: 200,
+                          image: AssetImage('assets/imgs/uog/p3.jpg')),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Text(
-                        "University \nOf Gujrat",
+                        "Welcome to Politics",
                         style: TextStyle(
                             fontSize: 24,
                             color: Color(0xff2D3142),
@@ -54,9 +60,6 @@ class _signupState extends State<signup> {
               ),
               const SizedBox(
                 height: 40,
-              ),
-              const SizedBox(
-                height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -154,22 +157,22 @@ class _signupState extends State<signup> {
               const SizedBox(
                 height: 20,
               ),
-              TextButton(
-                onPressed: () {},
-                child: Container(
-                  height: 50,
-                  width: 300,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xffF9703B)),
-                  child: const Center(
-                      child: Text(
+              Container(
+                height: 50,
+                width: 300,
+                //decoration: BoxDecoration(color: Colors.red),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(const Color(0xFFda3218))),
+                  onPressed: () {},
+                  child: const Text(
                     'Sign Up',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        fontWeight: FontWeight.bold,
                         fontSize: 16),
-                  )),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -187,12 +190,12 @@ class _signupState extends State<signup> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const LoginView()));
+                                builder: (context) => loginsecreen()));
                       },
                       child: const Text(
                         'Log In',
                         style:
-                            (TextStyle(fontSize: 16, color: Color(0xffF9703B))),
+                            (TextStyle(fontSize: 16, color: Color(0xFFda3218))),
                       )),
                 ],
               )

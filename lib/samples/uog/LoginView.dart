@@ -57,14 +57,6 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 40,
               ),
-              const Center(
-                  child: Text(
-                "Login Page",
-                style: TextStyle(
-                    fontSize: 24,
-                    color: Color(0xffF9703B),
-                    fontWeight: FontWeight.bold),
-              )),
               const SizedBox(
                 height: 10,
               ),
@@ -134,25 +126,27 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 50,
-                width: 300,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color(0xffF9703B)),
-                child: Center(
-                    child: TextButton(
-                        onPressed: () {
-                           LoginService.login("uog", "UOG123");
-                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const LoginView()));
-                        },
-                        child: const Text(
-                          'Log In',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
-                        ))),
+              TextButton(
+                onPressed: () {
+                  LoginService.login("uog", "UOG123");
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const LoginView()));
+                },
+                child: Container(
+                  height: 50,
+                  width: 300,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0xffF9703B)),
+                  child: const Center(
+                      child: Text(
+                    'Log In',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  )),
+                ),
               ),
               const SizedBox(
                 height: 15,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdashboard/samples/qamarkaira/SplashScreenView.dart';
 
 import 'package:flutterdashboard/samples/uog/SplashScreenView.dart';
 //import 'package:flutterdashboard/samples/cwiztech/SplashScreenView.dart';
