@@ -128,9 +128,10 @@ class _LoginViewState extends State<LoginView> {
               ),
               TextButton(
                 onPressed: () {
-                  LoginService.login("uog", "UOG123");
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => const LoginView()));
+
+                LoginService.login("uog", "UOG123") == true ?
+                print("Logged In") :
+                print("Account not found");
                 },
                 child: Container(
                   height: 50,
