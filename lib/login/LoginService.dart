@@ -11,12 +11,12 @@ import 'package:flutterdashboard/services/HTTPService.dart';
 import 'package:flutterdashboard/login/LoginModel.dart';
 
 class LoginService {
-
-  static Future<dynamic> login(String userName, String password) async {
+  static Future<bool> login(String userName, String password) async {
     dynamic responseJson;
     try {
       final response = await http.post(
-        Uri.parse("${oauthURL}oauth/token?username=$userName&password=$password&grant_type=password"),
+        Uri.parse(
+            "${oauthURL}oauth/token?username=$userName&password=$password&grant_type=password"),
         headers: {
           HttpHeaders.authorizationHeader: 'Basic $authBasic',
         },
@@ -39,11 +39,13 @@ class LoginService {
 
       LoginModel.applicationID = responseJson["application_ID"];
       LoginModel.applicationCODE = responseJson["application_CODE"];
-      LoginModel.applicationservicePATH = responseJson["applicationservice_PATH"];
-      LoginModel.applicationpathFRONTEND = responseJson["applicationpath_FRONTEND"];
+      LoginModel.applicationservicePATH =
+          responseJson["applicationservice_PATH"];
+      LoginModel.applicationpathFRONTEND =
+          responseJson["applicationpath_FRONTEND"];
       LoginModel.oauthservicePATH = responseJson["oauthservice_PATH"];
       LoginModel.applicationlogoPATH = responseJson["applicationlogo_PATH"];
-      LoginModel.authorities = responseJson["authorities"];
+//      LoginModel.authorities = responseJson["authorities"];
 
       LoginModel.personID = responseJson["person_ID"];
       LoginModel.userID = responseJson["user_ID"];
@@ -59,13 +61,11 @@ class LoginService {
       LoginModel.companyLink = responseJson["CompanyLink"];
       LoginModel.projectTitle = responseJson["ProjectTitle"];
       LoginModel.copyRights = responseJson["CopyRights"];
-      LoginModel.headerName =responseJson["HeaderName"];
-
+      LoginModel.headerName = responseJson["HeaderName"];
     } on SocketException {
-      throw FetchDataException('No Internet Connection');
+      return false;
+//      throw FetchDataException('No Internet Connection');
     }
     return true;
   }
-
 }
-

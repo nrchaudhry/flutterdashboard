@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 // ignore: depend_on_referenced_packages
 //import 'package:LoginView_userinterface/signup.dart';
 //import 'package:login_userinterface/signup.dart';
+import 'package:flutterdashboard/dashboard/DashboardView.dart';
 
 import 'package:flutterdashboard/login/LoginService.dart';
 import 'SignupView.dart';
@@ -17,6 +18,9 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   bool hiddenpassword = true;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +67,7 @@ class _LoginViewState extends State<LoginView> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: TextFormField(
+                  controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       hintText: 'Email',
@@ -85,6 +90,7 @@ class _LoginViewState extends State<LoginView> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: TextFormField(
+                  controller: passwordController,
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: hiddenpassword,
                   decoration: InputDecoration(
@@ -127,11 +133,33 @@ class _LoginViewState extends State<LoginView> {
                 height: 20,
               ),
               TextButton(
-                onPressed: () {
+                onPressed: () async {
+                  if (emailController.text.toString() == "") {
+                    showAlertDialog(context, "Login", "Enter User Name!");
 
-                LoginService.login("uog", "UOG123") == true ?
-                print("Logged In") :
-                print("Account not found");
+                    const snackBar = SnackBar(
+                      content: Text('Enter User Name!'),
+                      backgroundColor: (Color(0xffF9703B)),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  } else if (passwordController.text.toString() == "") {
+                    const snackBar = SnackBar(
+                      content: Text('Enter Password!'),
+                      backgroundColor: (Color(0xffF9703B)),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  } else {
+                    var response = await LoginService.login(
+                        emailController.text.toString(),
+                        passwordController.text.toString());
+                    if (response == true) {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (_) => const DashboardView()));
+                    } else {
+                      showAlertDialog(
+                          context, "Login", "Invalid User Name/Password!");
+                    }
+                  }
                 },
                 child: Container(
                   height: 50,
@@ -185,4 +213,31 @@ class _LoginViewState extends State<LoginView> {
       hiddenpassword = !hiddenpassword;
     });
   }
+}
+
+showAlertDialog(BuildContext context, String title, String message) {
+  // Create button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(title),
+    content: Text(message),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
