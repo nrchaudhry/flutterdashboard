@@ -1,10 +1,19 @@
+//import 'dart:ffi';
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBar.dart';
+import 'package:flutterdashboard/samples/qamarkaira/Drawer.dart';
+import 'package:flutterdashboard/setting.dart';
+// import 'package:flutter/src/widgets/container.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterdashboard/theme.dart';
 // ignore: depend_on_referenced_packages
 //import 'package:loginsecreen_userinterface/signup.dart';
 //import 'package:login_userinterface/signup.dart';
 
+import '../../login/LoginService.dart';
+import '../uog/LoginView.dart';
 import 'SignupView.dart';
 
 class loginsecreen extends StatefulWidget {
@@ -16,16 +25,42 @@ class loginsecreen extends StatefulWidget {
 
 class _loginsecreenState extends State<loginsecreen> {
   bool hiddenpassword = true;
+  bool value = false;
+  @override
+  void initState() {
+    super.initState();
+    hiddenpassword = true;
+  }
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //  backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'Kaira Group',
+            //  textAlign: TextAlign.right,
+          ),
+        ),
+        backgroundColor: sPlash2,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
+      ),
+      drawer: const mydrawer(),
+      //  backgroundColor:
+      // Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               const SizedBox(
-                height: 30,
+                height: 60,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +71,7 @@ class _loginsecreenState extends State<loginsecreen> {
                   //      width: 100,
                   //    image: AssetImage('assets/imgs/uog/p.jpg')),
                   const SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -45,33 +80,26 @@ class _loginsecreenState extends State<loginsecreen> {
                       Image(
                           height: 200,
                           width: 200,
-                          image: AssetImage('assets/imgs/uog/p3.jpg')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "Welcome to Politics",
-                        style: TextStyle(
-                            fontSize: 24,
-                            color: Color(0xff2D3142),
-                            fontWeight: FontWeight.bold),
-                      ),
+                          image: AssetImage('assets/imgs/qamar/k.png')),
                     ],
                   )
                 ],
               ),
-              const SizedBox(
-                height: 40,
-              ),
+              // const SizedBox(
+              //   height: 40,
+              // ),
               const SizedBox(
                 height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: TextFormField(
+                  controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       hintText: 'Email',
+                      labelText: 'Email',
+                      labelStyle: TextStyle(color: black),
                       fillColor: const Color(0xffF8F9FA),
                       filled: true,
                       prefixIcon: const Icon(
@@ -91,13 +119,27 @@ class _loginsecreenState extends State<loginsecreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                 child: TextFormField(
+                  controller: passwordController,
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: hiddenpassword,
                   decoration: InputDecoration(
                       hintText: 'Password',
+                      labelText: 'Password',
+                      labelStyle: TextStyle(color: black),
                       suffixIcon: InkWell(
-                          onTap: _tooglepassword,
-                          child: const Icon(Icons.visibility)),
+                        //onTap: _tooglepassword,
+                        child: Icon(
+                          hiddenpassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: hiddenpassword ? black : sPlash2,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            hiddenpassword = !hiddenpassword;
+                          });
+                        },
+                      ),
                       fillColor: const Color(0xffF8F9FA),
                       filled: true,
                       prefixIcon: const Icon(
@@ -114,11 +156,39 @@ class _loginsecreenState extends State<loginsecreen> {
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 10, bottom: 20),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  //  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Remember your password',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, color: black),
+                    ),
+                    Checkbox(
+                        checkColor: Colors.white,
+                        activeColor: sPlash2,
+                        //checkColor: black,
+                        //  autofocus: false,
+                        //  focusColor: black,
+                        // hoverColor: black,
+                        // focusColor: black,
+                        //  activeColor: Colors.white,
+                        value: this.value,
+                        onChanged: (value) {
+                          setState(() {
+                            this.value = value!;
+                          });
+                        })
+                    //   Text('Remember your password'),
+                  ],
+                ),
               ),
-              Text('Remember your password'),
               //  Checkbox(value: , onChanged: onChanged),
+
               Container(
                 height: 50,
                 width: 300,
@@ -127,7 +197,34 @@ class _loginsecreenState extends State<loginsecreen> {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(const Color(0xFFda3218))),
-                  onPressed: () {},
+                  onPressed: () async {
+                    if (emailController.text.toString() == "") {
+                      showAlertDialog(context, "Login", "Enter User Name!");
+
+                      const snackBar = SnackBar(
+                        content: Text('Enter User Name!'),
+                        backgroundColor: (Color(0xffF9703B)),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    } else if (passwordController.text.toString() == "") {
+                      const snackBar = SnackBar(
+                        content: Text('Enter Password!'),
+                        backgroundColor: (Color(0xffF9703B)),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    } else {
+                      var response = await LoginService.login(
+                          emailController.text.toString(),
+                          passwordController.text.toString());
+                      if (response == true) {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => const bottombar()));
+                      } else {
+                        showAlertDialog(
+                            context, "Login", "Invalid User Name/Password!");
+                      }
+                    }
+                  },
                   child: const Text(
                     'Log In',
                     style: TextStyle(
@@ -147,12 +244,14 @@ class _loginsecreenState extends State<loginsecreen> {
                   children: [
                     TextButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         'Forgot Password',
                         style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xff323F4B),
-                            decoration: TextDecoration.underline),
+                          fontSize: 16,
+                          color: black,
+                          fontWeight: FontWeight.bold,
+                          //  decoration: TextDecoration.underline
+                        ),
                       ),
                     ),
                   ],
@@ -163,7 +262,10 @@ class _loginsecreenState extends State<loginsecreen> {
                 children: [
                   const Text(
                     "Don't have an account?",
-                    style: (TextStyle(fontSize: 16, color: Color(0xff4C5980))),
+                    style: (TextStyle(
+                        fontSize: 16,
+                        color: Color(0xff4C5980),
+                        fontWeight: FontWeight.bold)),
                   ),
                   TextButton(
                       onPressed: () {
@@ -174,11 +276,13 @@ class _loginsecreenState extends State<loginsecreen> {
                       },
                       child: const Text(
                         'Sign Up',
-                        style:
-                            (TextStyle(fontSize: 16, color: Color(0xFFda3218))),
+                        style: (TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFFda3218),
+                            fontWeight: FontWeight.bold)),
                       )),
                 ],
-              )
+              ),
             ],
           ),
         ),
@@ -186,9 +290,9 @@ class _loginsecreenState extends State<loginsecreen> {
     );
   }
 
-  void _tooglepassword() {
-    setState(() {
-      hiddenpassword = !hiddenpassword;
-    });
-  }
+  // void _tooglepassword() {
+  //   setState(() {
+  //     hiddenpassword = !hiddenpassword;
+  //   });
+  // }
 }

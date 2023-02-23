@@ -5,6 +5,7 @@ Color kPrimaryWhiteColor = Color.fromARGB(255, 245, 242, 242);
 Color kPrimaryColor = Color(0xFFe9533c);
 Color sPlash1 = Color(0xFFec6753);
 Color sPlash2 = Color(0xFFda3218);
+Color black = Color(0xff4C5980);
 Color kSecondaryColor = Color(0xFF59706F);
 Color kDarkGreyColor = Color(0xFFA8A8A8);
 Color kWhiteColor = Color(0xFFFFFFFF);

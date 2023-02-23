@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdashboard/samples/qamarkaira/SplashScreenView.dart';
 //import 'package:flutterdashboard/samples/qamarkaira/SplashScreenView.dart';
 
 import 'package:flutterdashboard/samples/uog/SplashScreenView.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const SplashScreenView(),
+      home: const SplashScreenViewpolitics(),
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterdashboard/theme.dart';
 //import 'package:login_userinterface/login.dart';
 
 import 'LoginView.dart';
@@ -31,14 +32,17 @@ class _SplashScreenViewpoliticsState extends State<SplashScreenViewpolitics> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(children: [
-          Container(
+        backgroundColor: sPlash2,
+        body: Center(
+          child: Container(
+            height: 300,
+            width: 300,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/imgs/uog/p6.jpg'),
+                    image: AssetImage('assets/imgs/qamar/k.png'),
                     fit: BoxFit.fill)),
           ),
-        ]),
+        ),
       ),
     );
   }
