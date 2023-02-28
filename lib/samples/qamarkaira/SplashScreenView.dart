@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBarLogin.dart';
 import 'package:flutterdashboard/theme.dart';
 //import 'package:login_userinterface/login.dart';
 
@@ -23,7 +24,7 @@ class _SplashScreenViewpoliticsState extends State<SplashScreenViewpolitics> {
   void initState() {
     Timer(const Duration(seconds: 5), (() {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const loginsecreen()));
+          MaterialPageRoute(builder: (_) => const bottombarlogin()));
     }));
     super.initState();
   }

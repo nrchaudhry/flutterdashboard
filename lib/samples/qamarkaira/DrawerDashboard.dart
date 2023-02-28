@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBar.dart';
+import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBarLogin.dart';
 import 'package:flutterdashboard/samples/qamarkaira/DashViewView.dart';
+import 'package:flutterdashboard/samples/qamarkaira/LoginView.dart';
 
-class mydrawer extends StatefulWidget {
-  const mydrawer({super.key});
+class drawerdashboard extends StatefulWidget {
+  const drawerdashboard({super.key});
 
   @override
-  State<mydrawer> createState() => _DrawerState();
+  State<drawerdashboard> createState() => _DrawerState();
 }
 
-class _DrawerState extends State<mydrawer> {
+class _DrawerState extends State<drawerdashboard> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -31,11 +32,11 @@ class _DrawerState extends State<mydrawer> {
           TextButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const bottombar()));
+                  MaterialPageRoute(builder: (context) => bottombarlogin()));
             },
             child: const ListTile(
-              leading: Icon(Icons.home),
-              title: Text('DASHBOARD'),
+              leading: Icon(Icons.login),
+              title: Text('Login Page'),
             ),
           ),
         ],

@@ -41,6 +41,8 @@ dependencies:
   onboarding: ^3.1.0
   lottie: ^2.1.0
   responsive_sizer: ^3.1.1
+  badges: ^3.0.2
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +70,7 @@ flutter:
   assets:
     - assets/imgs/uog/
     - assets/imgs/qamar/
+    - assets/imgs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

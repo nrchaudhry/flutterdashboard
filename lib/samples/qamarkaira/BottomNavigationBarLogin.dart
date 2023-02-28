@@ -3,25 +3,25 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterdashboard/samples/qamarkaira/DashViewView.dart';
 import 'package:flutterdashboard/samples/qamarkaira/Events.dart';
+import 'package:flutterdashboard/samples/qamarkaira/LoginView.dart';
 import 'package:flutterdashboard/samples/qamarkaira/Membership.dart';
 import 'package:flutterdashboard/samples/qamarkaira/News.dart';
 import 'package:flutterdashboard/theme.dart';
 
-class bottombar extends StatefulWidget {
-  const bottombar({super.key});
+class bottombarlogin extends StatefulWidget {
+  const bottombarlogin({super.key});
 
   @override
-  State<bottombar> createState() => _bottombarState();
+  State<bottombarlogin> createState() => _bottombarloginState();
 }
 
-class _bottombarState extends State<bottombar> {
+class _bottombarloginState extends State<bottombarlogin> {
   int cindex = 0;
   int active = 0;
   final Screens = const [
-    DashBoardViewPolitics(),
+    loginsecreen(),
     News(),
     Events(),
-    Membership()
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,10 +43,10 @@ class _bottombarState extends State<bottombar> {
               Icons.home,
               //color: black,
             ),
-            label: 'Home',
+            label: 'Login',
             // tooltip: 'abcd',
             selectedIcon: Icon(
-              Icons.home,
+              Icons.login,
               color: Colors.white,
             ),
           ),
@@ -66,14 +66,6 @@ class _bottombarState extends State<bottombar> {
               color: Colors.white,
             ),
           ),
-          NavigationDestination(
-            icon: Icon(Icons.card_membership),
-            label: 'Membership',
-            selectedIcon: Icon(
-              Icons.card_membership,
-              color: Colors.white,
-            ),
-          )
         ],
       ),
     );

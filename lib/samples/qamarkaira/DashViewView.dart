@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBar.dart';
-import 'package:flutterdashboard/samples/qamarkaira/Drawer.dart';
-import 'package:flutterdashboard/samples/qamarkaira/Drawer2.dart';
+import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBarDashboard.dart';
+import 'package:flutterdashboard/samples/qamarkaira/DrawerDashboard.dart';
 import 'package:flutterdashboard/samples/qamarkaira/checkbox.dart';
 import 'package:flutterdashboard/theme.dart';
 
@@ -29,7 +28,7 @@ class _DashBoardViewPoliticsState extends State<DashBoardViewPolitics> {
         //   }),
         // ),
       ),
-      drawer: mydrawer2(),
+      drawer: drawerdashboard(),
       body: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
