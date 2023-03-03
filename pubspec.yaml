@@ -43,6 +43,7 @@ dependencies:
   responsive_sizer: ^3.1.1
   badges: ^3.0.2
   readmore: ^2.2.0
+  country_picker: ^2.0.19
 
 dev_dependencies:
   flutter_test:

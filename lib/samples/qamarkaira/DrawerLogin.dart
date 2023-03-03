@@ -16,7 +16,7 @@ class _DrawerState extends State<drawerlogin> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: MediaQuery.of(context).size.width * 0.7,
       //   child: ListView.builder(
       // itemCount: 5,
       // itemBuilder: (context, index) {

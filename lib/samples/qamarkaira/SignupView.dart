@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdashboard/samples/qamarkaira/BottomNavigationBarLogin.dart';
 import 'package:flutterdashboard/theme.dart';
@@ -17,6 +18,7 @@ class signup extends StatefulWidget {
 class _signupState extends State<signup> {
   bool hidepassword = true;
   bool hideconfirmpassword = true;
+  String contrycode = '';
   @override
   void initState() {
     super.initState();
@@ -33,6 +35,7 @@ class _signupState extends State<signup> {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: Container(
+              height: 200,
               child: Column(
                 children: [
                   Padding(
@@ -132,10 +135,32 @@ class _signupState extends State<signup> {
                           hintText: 'Phone',
                           fillColor: const Color(0xffF8F9FA),
                           filled: true,
+                          suffixIcon: TextButton(
+                              onPressed: () {
+                                showCountryPicker(
+                                    favorite: ['pk', 'af', 'in'],
+                                    countryListTheme: CountryListThemeData(
+                                        // inputDecoration: const InputDecoration(
+                                        //     // labelText: 'search for country',
+                                        //     ),
+                                        borderRadius: BorderRadius.circular(2),
+                                        flagSize: 20),
+                                    context: context,
+                                    onSelect: (Country value) {
+                                      contrycode = value.phoneCode.toString();
+                                      setState(() {});
+                                    });
+                              },
+                              child: Icon(
+                                Icons.arrow_drop_down,
+                                color: black,
+                              )),
                           prefixIcon: const Icon(
                             Icons.phone,
                             color: Color(0xff323F4B),
                           ),
+                          //   suffixStyle: TextStyle(color: sPlash2),
+                          prefixText: '+$contrycode '.toString(),
                           //        suffixIcon: Icon(Icons.visibility_off_outlined),
                           focusedBorder: OutlineInputBorder(
                               borderSide:
