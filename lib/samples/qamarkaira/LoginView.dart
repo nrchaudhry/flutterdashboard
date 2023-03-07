@@ -206,6 +206,8 @@ class _loginsecreenState extends State<loginsecreen> {
                           );
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         } else if (passwordController.text.toString() == "") {
+                          showAlertDialog(context, "Login", "Enter password!");
+
                           const snackBar = SnackBar(
                             content: Text('Enter Password!'),
                             backgroundColor: (Color(0xffF9703B)),

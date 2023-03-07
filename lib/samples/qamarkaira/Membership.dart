@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterdashboard/samples/qamarkaira/DrawerEvents.dart';
+import 'package:flutterdashboard/samples/qamarkaira/DrawerMembers.dart';
 import 'package:flutterdashboard/theme.dart';
 
 class Membership extends StatefulWidget {
@@ -17,8 +19,9 @@ class _MembershipState extends State<Membership> {
       appBar: AppBar(
         title: Center(child: Text('Membership')),
         backgroundColor: sPlash2,
-        automaticallyImplyLeading: false,
+        //automaticallyImplyLeading: false,
       ),
+      drawer: drawermembers(),
       body: Center(child: Text('MEMBERSHIP')),
     );
   }

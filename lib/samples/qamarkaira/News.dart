@@ -17,9 +17,19 @@ class _NewsState extends State<News> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('NewsPage')),
+        title: const Center(
+          child: Text(
+            'Kaira Group News',
+            //  textAlign: TextAlign.right,
+          ),
+        ),
         backgroundColor: sPlash2,
-        // automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
       ),
       drawer: drawernews(),
       body: Padding(

@@ -7,6 +7,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterdashboard/dashboard/DashboardView.dart';
 
 import 'package:flutterdashboard/login/LoginService.dart';
+import 'package:flutterdashboard/samples/qamarkaira/SplashScreenView.dart';
+import 'package:flutterdashboard/samples/uog/Dashboard.dart';
 import 'SignupView.dart';
 
 class LoginView extends StatefulWidget {
@@ -183,9 +185,18 @@ class _LoginViewState extends State<LoginView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Don't have an account?",
-                    style: (TextStyle(fontSize: 16, color: Color(0xff4C5980))),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const homePage()));
+                    },
+                    child: const Text(
+                      "Don't have an account?",
+                      style:
+                          (TextStyle(fontSize: 16, color: Color(0xff4C5980))),
+                    ),
                   ),
                   TextButton(
                       onPressed: () {
@@ -196,6 +207,18 @@ class _LoginViewState extends State<LoginView> {
                       },
                       child: const Text(
                         'Sign Up',
+                        style:
+                            (TextStyle(fontSize: 16, color: Color(0xffF9703B))),
+                      )),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const signup()));
+                      },
+                      child: const Text(
+                        'UOG MAP',
                         style:
                             (TextStyle(fontSize: 16, color: Color(0xffF9703B))),
                       )),
