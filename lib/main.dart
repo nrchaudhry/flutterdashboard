@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdashboard/dashboard/Dashboard.dart';
 import 'package:flutterdashboard/login/LoginView.dart';
+import 'package:flutterdashboard/navigationbar/NavigationBarAtLoginView.dart';
 
 import 'splashsecreen/SplashScreenView.dart';
 
