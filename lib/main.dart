@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdashboard/samples/qamarkaira/SignupView.dart';
-import 'package:flutterdashboard/samples/qamarkaira/SplashScreenView.dart';
-//import 'package:flutterdashboard/samples/qamarkaira/SplashScreenView.dart';
+import 'package:flutterdashboard/dashboard/Dashboard.dart';
+import 'package:flutterdashboard/login/LoginView.dart';
+import 'package:flutterdashboard/navigationbar/NavigationBarAtLoginView.dart';
 
-import 'package:flutterdashboard/samples/uog/SplashScreenView.dart';
-//import 'package:flutterdashboard/samples/cwiztech/SplashScreenView.dart';
+import 'splashsecreen/SplashScreenView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +15,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
-      home: const SplashScreenViewpolitics(),
+      home: SplashScreenView(),
     );
   }
 }

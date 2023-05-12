@@ -1,147 +1,281 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+
+import '../../login/LoginService.dart';
+import '../header/HeaderView.dart';
+import '../navigationbar/NavigationBarView.dart';
+import '../signup/SignupView.dart';
+import '../theme.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
   @override
-  _loginviewState createState() => _loginviewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _loginviewState extends State<LoginView> {
+class _LoginViewState extends State<LoginView> {
+  bool hiddenpassword = true;
+  bool value = false;
   @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Column(
-      // ignore: prefer_const_literals_to_create_immutables
-      children: <Widget>[
-        Container(
-          width: 250,
-          height: 150,
-          child: const Padding(
-            padding: EdgeInsets.only(top: 25.0),
-            child: Image(
-              width: 50,
-              height: 30,
-              image: AssetImage('assets/images/logo1.png'),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: Container(
-                width: 320,
-                height: 50,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(250, 167, 204, 0),
-                  )),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text("Forgot Password?"),
-            SizedBox(
-              height: 10,
-            ),
-            Text("Don,t have an account!"),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Register Now!",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 60,
-        ),
-        Stack(children: <Widget>[
-          Container(
-              width: 500,
-              height: 400,
-              child: Transform.rotate(
-                angle: -30 * pi / 180,
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: ColorFiltered(
-                        colorFilter: ColorFilter.mode(
-                          Color.fromARGB(255, 6, 96, 1).withOpacity(0.7),
-                          BlendMode.srcATop,
-                        ),
-                        child: Opacity(
-                          opacity: 0.4,
-                          child: Image.asset(
-                            'assets/images/Rectangle8.jpeg',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ))),
-              )),
-          const Padding(
-            padding: EdgeInsets.only(left: 60, top: 50, right: 60),
-            child: Text(
-              ' "Login into self love and logout into someone else love otherwise you will forget your password of Happiness"\t\t\t\n\nMa Deuce',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 130, top: 170, right: 40),
-            child: Image(
-              width: 100,
-              height: 50,
-              image: AssetImage('assets/images/logow.png'),
-            ),
-          ),
-        ])
-      ],
-    ));
+  void initState() {
+    super.initState();
+    hiddenpassword = true;
   }
 
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'Sign In - Uog',
+            //  textAlign: TextAlign.right,
+          ),
+        ),
+        backgroundColor: sPlash2,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
+      ),
+      drawer: const HeaderView(),
+      //  backgroundColor:
+      // Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Container(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      //      const Image(
+                      //        //      height: 200,
+                      //      width: 100,
+                      //    image: AssetImage('assets/imgs/uog/p.jpg')),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Image(
+                              height: 200,
+                              width: 200,
+                              image: AssetImage('assets/imgs/uog/UOG.png')),
+                        ],
+                      )
+                    ],
+                  ),
+                  // const SizedBox(
+                  //   height: 40,
+                  // ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, top: 10),
+                    child: TextFormField(
+                      controller: emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                          hintText: 'Email',
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: black),
+                          fillColor: const Color(0xffF8F9FA),
+                          filled: true,
+                          prefixIcon: const Icon(
+                            Icons.email,
+                            color: Color(0xff323F4B),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xffE4E7EB)),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Color(0xffE4E7EB)),
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Forgot User Name',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: black,
+                              fontWeight: FontWeight.bold,
+                              //  decoration: TextDecoration.underline
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, top: 10),
+                    child: TextFormField(
+                      controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: hiddenpassword,
+                      decoration: InputDecoration(
+                          hintText: 'Password',
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: black),
+                          suffixIcon: InkWell(
+                            //onTap: _tooglepassword,
+                            child: Icon(
+                              hiddenpassword
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: hiddenpassword ? black : sPlash2,
+                            ),
+                            onTap: () {
+                              setState(() {
+                                hiddenpassword = !hiddenpassword;
+                              });
+                            },
+                          ),
+                          fillColor: const Color(0xffF8F9FA),
+                          filled: true,
+                          prefixIcon: const Icon(
+                            Icons.lock,
+                            color: Color(0xff323F4B),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Color(0xffE4E7EB)),
+                              borderRadius: BorderRadius.circular(10)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Color(0xffE4E7EB)),
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Forgot Password',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: black,
+                              fontWeight: FontWeight.bold,
+                              //  decoration: TextDecoration.underline
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Container(
+                    height: 50,
+                    width: 300,
+                    //decoration: BoxDecoration(color: Colors.red),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              const Color(0xffF9703B))),
+                      onPressed: () async {
+                        if (emailController.text.toString() == "") {
+                          const snackBar = SnackBar(
+                            content: Text('Enter User Name!'),
+                            backgroundColor: (Color(0xffF9703B)),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        } else if (passwordController.text.toString() == "") {
+                          const snackBar = SnackBar(
+                            content: Text('Enter Password!'),
+                            backgroundColor: (Color(0xffF9703B)),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        } else {
+                          var response = await LoginService.login(
+                              emailController.text.toString(),
+                              passwordController.text.toString());
+                          if (response == true) {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (_) => const NavigationBarView()));
+                          } else {
+                            const snackBar = SnackBar(
+                              content: Text('Invalid User Name/Password!'),
+                              backgroundColor: (Color(0xffF9703B)),
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
+                        }
+                      },
+                      child: const Text(
+                        'Log In',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignupView()));
+                          },
+                          child: Text(
+                            'Sign Up ?',
+                            style: (TextStyle(
+                                fontSize: 16,
+                                color: sPlash2,
+                                fontWeight: FontWeight.bold)),
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // void _tooglepassword() {
+  //   setState(() {
+  //     hiddenpassword = !hiddenpassword;
+  //   });
+  // }
 }
