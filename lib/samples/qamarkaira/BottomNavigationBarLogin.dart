@@ -22,6 +22,7 @@ class _bottombarloginState extends State<bottombarlogin> {
     loginsecreen(),
     News(),
     Events(),
+    loginsecreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -61,6 +62,14 @@ class _bottombarloginState extends State<bottombarlogin> {
           NavigationDestination(
             icon: Icon(Icons.event),
             label: 'Events',
+            selectedIcon: Icon(
+              Icons.event,
+              color: Colors.white,
+            ),
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.event),
+            label: 'New Item',
             selectedIcon: Icon(
               Icons.event,
               color: Colors.white,
