@@ -4,17 +4,25 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 import 'package:flutterdashboard/services/AppException.dart';
-import 'package:flutterdashboard/login/LoginModel.dart';
+import 'package:flutterdashboard/login/Login.dart';
 
 class HTTPService {
-  
   static Future<dynamic> call(String postData) async {
     dynamic responseJson;
     try {
+      // final response = await http.post(
+      //   Uri.parse("${Login.applicationservicePATH}apigateway"),
+      //   headers: {
+      //     HttpHeaders.authorizationHeader: 'bearer ${Login.accessToken}',
+      //   },
+      //   body: postData,
+      // );
+
       final response = await http.post(
-        Uri.parse("${LoginModel.applicationservicePATH}apigateway"),
+        Uri.parse("http://api.cwiztech.com:8079/v1/apigateway"),
         headers: {
-          HttpHeaders.authorizationHeader: 'bearer ${LoginModel.accessToken}',
+          HttpHeaders.authorizationHeader:
+              'bearer 74418764-1024-4666-afc9-db751a814768',
         },
         body: postData,
       );

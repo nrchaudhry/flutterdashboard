@@ -3,12 +3,12 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import 'package:flutterdashboard/setting.dart';
+import 'package:flutterdashboard/config/setting.dart';
 
 import 'package:flutterdashboard/services/AppException.dart';
 import 'package:flutterdashboard/services/HTTPService.dart';
 
-import 'package:flutterdashboard/login/LoginModel.dart';
+import 'package:flutterdashboard/login/Login.dart';
 
 class LoginService {
   static Future<bool> login(String userName, String password) async {
@@ -37,31 +37,31 @@ class LoginService {
 
       responseJson = HTTPService.returnResponse(loginResponse);
 
-      LoginModel.applicationID = responseJson["application_ID"];
-      LoginModel.applicationCODE = responseJson["application_CODE"];
-      LoginModel.applicationservicePATH =
+      Login.applicationID = responseJson["application_ID"];
+      Login.applicationCODE = responseJson["application_CODE"];
+      Login.applicationservicePATH =
           responseJson["applicationservice_PATH"];
-      LoginModel.applicationpathFRONTEND =
+      Login.applicationpathFRONTEND =
           responseJson["applicationpath_FRONTEND"];
-      LoginModel.oauthservicePATH = responseJson["oauthservice_PATH"];
-      LoginModel.applicationlogoPATH = responseJson["applicationlogo_PATH"];
-//      LoginModel.authorities = responseJson["authorities"];
+      Login.oauthservicePATH = responseJson["oauthservice_PATH"];
+      Login.applicationlogoPATH = responseJson["applicationlogo_PATH"];
+//      Login.authorities = responseJson["authorities"];
 
-      LoginModel.personID = responseJson["person_ID"];
-      LoginModel.userID = responseJson["user_ID"];
-      LoginModel.userNAME = responseJson["user_NAME"];
-      LoginModel.forenames = responseJson["forenames"];
-      LoginModel.surname = responseJson["surname"];
-      LoginModel.lastLOGIN = responseJson["last_LOGIN"];
+      Login.personID = responseJson["person_ID"];
+      Login.userID = responseJson["user_ID"];
+      Login.userNAME = responseJson["user_NAME"];
+      Login.forenames = responseJson["forenames"];
+      Login.surname = responseJson["surname"];
+      Login.lastLOGIN = responseJson["last_LOGIN"];
 
-      LoginModel.accessToken = accessToken;
-      LoginModel.expiresin = responseJson["expires_in"];
+      Login.accessToken = accessToken;
+      Login.expiresin = responseJson["expires_in"];
 
-      LoginModel.companyName = responseJson["CompanyName"];
-      LoginModel.companyLink = responseJson["CompanyLink"];
-      LoginModel.projectTitle = responseJson["ProjectTitle"];
-      LoginModel.copyRights = responseJson["CopyRights"];
-      LoginModel.headerName = responseJson["HeaderName"];
+      Login.companyName = responseJson["CompanyName"];
+      Login.companyLink = responseJson["CompanyLink"];
+      Login.projectTitle = responseJson["ProjectTitle"];
+      Login.copyRights = responseJson["CopyRights"];
+      Login.headerName = responseJson["HeaderName"];
     } on SocketException {
       return false;
 //      throw FetchDataException('No Internet Connection');

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdashboard/dashboard/Dashboard.dart';
-import 'package:flutterdashboard/login/LoginView.dart';
-import 'package:flutterdashboard/navigationbar/NavigationBarAtLoginView.dart';
-
-import 'splashsecreen/SplashScreenView.dart';
+import 'package:flutterdashboard/features/splashscreen/SplashScreenView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +11,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreenView(),
+      theme: ThemeData(),
+      home: const SplashScreenView(),
     );
   }
 }

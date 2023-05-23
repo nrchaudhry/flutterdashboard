@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutterdashboard/config/theme.dart';
+
+import 'package:flutterdashboard/features/header/HeaderView.dart';
+import 'package:flutterdashboard/features/navigationbar/NavigationBarView.dart';
+
+import 'SignupView.dart';
+
 import '../../login/LoginService.dart';
-import '../header/HeaderView.dart';
-import '../navigationbar/NavigationBarView.dart';
-import '../signup/SignupView.dart';
-import '../theme.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -30,7 +33,7 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Sign In - Uog',
+            'Sign In - Kaira Group Platform',
             //  textAlign: TextAlign.right,
           ),
         ),
@@ -73,7 +76,7 @@ class _LoginViewState extends State<LoginView> {
                           Image(
                               height: 200,
                               width: 200,
-                              image: AssetImage('assets/imgs/uog/UOG.png')),
+                              image: AssetImage('assets/imgs/qamar/k.png')),
                         ],
                       )
                     ],
@@ -201,7 +204,7 @@ class _LoginViewState extends State<LoginView> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              const Color(0xffF9703B))),
+                              const Color(0xFFda3218))),
                       onPressed: () async {
                         if (emailController.text.toString() == "") {
                           const snackBar = SnackBar(
@@ -255,11 +258,11 @@ class _LoginViewState extends State<LoginView> {
                                 MaterialPageRoute(
                                     builder: (context) => const SignupView()));
                           },
-                          child: Text(
-                            'Sign Up ?',
+                          child: const Text(
+                            'Become a Member',
                             style: (TextStyle(
                                 fontSize: 16,
-                                color: sPlash2,
+                                color: Color(0xFFda3218),
                                 fontWeight: FontWeight.bold)),
                           )),
                     ],
