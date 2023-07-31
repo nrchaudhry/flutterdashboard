@@ -62,7 +62,7 @@ class _SignupViewState extends State<SignupView> {
                   const Image(
                       height: 200,
                       width: 200,
-                      image: AssetImage('assets/imgs/qamar/k.png')),
+                      image: AssetImage('imgs/uog/uog.png')),
                   const SizedBox(
                     height: 10,
                   ),

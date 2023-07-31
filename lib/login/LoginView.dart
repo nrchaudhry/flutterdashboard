@@ -4,6 +4,7 @@ import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/features/header/HeaderView.dart';
 import 'package:flutterdashboard/features/navigationbar/NavigationBarView.dart';
+import 'package:flutterdashboard/config/setting.dart';
 
 import 'SignupView.dart';
 
@@ -33,7 +34,7 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Sign In - Kaira Group Platform',
+            'Sign In - UOG',
             //  textAlign: TextAlign.right,
           ),
         ),
@@ -76,7 +77,7 @@ class _LoginViewState extends State<LoginView> {
                           Image(
                               height: 200,
                               width: 200,
-                              image: AssetImage('assets/imgs/qamar/k.png')),
+                              image: AssetImage('imgs/uog/uog.png')),
                         ],
                       )
                     ],
@@ -204,18 +205,18 @@ class _LoginViewState extends State<LoginView> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              const Color(0xFFda3218))),
+                              kSecondaryColor)),
                       onPressed: () async {
                         if (emailController.text.toString() == "") {
                           const snackBar = SnackBar(
                             content: Text('Enter User Name!'),
-                            backgroundColor: (Color(0xffF9703B)),
+                            backgroundColor: (kSecondaryColor),
                           );
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         } else if (passwordController.text.toString() == "") {
                           const snackBar = SnackBar(
                             content: Text('Enter Password!'),
-                            backgroundColor: (Color(0xffF9703B)),
+                            backgroundColor: (kSecondaryColor),
                           );
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         } else {
@@ -229,7 +230,7 @@ class _LoginViewState extends State<LoginView> {
                           } else {
                             const snackBar = SnackBar(
                               content: Text('Invalid User Name/Password!'),
-                              backgroundColor: (Color(0xffF9703B)),
+                              backgroundColor: (kSecondaryColor),
                             );
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
@@ -262,7 +263,7 @@ class _LoginViewState extends State<LoginView> {
                             'Become a Member',
                             style: (TextStyle(
                                 fontSize: 16,
-                                color: Color(0xFFda3218),
+                                color: kPrimaryColor,
                                 fontWeight: FontWeight.bold)),
                           )),
                     ],

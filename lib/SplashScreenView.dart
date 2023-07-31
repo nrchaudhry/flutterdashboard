@@ -1,12 +1,12 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+//import 'package:login_userinterface/login.dart';
 
-import 'package:flutterdashboard/config/theme.dart';
-
-import 'package:flutterdashboard/features/navigationbar/NavigationBarAtLoginView.dart';
-
-import '../../login/LoginService.dart';
+import 'package:flutterdashboard/login/LoginView.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
@@ -19,10 +19,9 @@ class SplashScreenView extends StatefulWidget {
 class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState() {
-    getToken();
-    Timer(const Duration(seconds: 1), (() {
+    Timer(const Duration(seconds: 5), (() {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const NavigationBarAtLoginView()));
+          MaterialPageRoute(builder: (_) => const LoginView()));
     }));
     super.initState();
   }
@@ -31,22 +30,15 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: sPlash2,
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
+        body: Stack(children: [
+          Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('imgs/uog/uog.png'),
                     fit: BoxFit.fill)),
           ),
-        ),
+        ]),
       ),
     );
-  }
-
-  getToken() async {
-    var response = await LoginService.login('uog', 'UOG123');
   }
 }

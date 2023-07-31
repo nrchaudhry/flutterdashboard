@@ -44,7 +44,7 @@ class _HomeViewState extends State<HomeView> {
                   onPressed: () {},
                   icon: const CircleAvatar(
                     radius: 80,
-                    backgroundImage: AssetImage('assets/imgs/qamar/k.png'),
+                    backgroundImage: AssetImage('imgs/uog/uog.png'),
                   )),
               TextButton(
                   onPressed: () {},
@@ -227,7 +227,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: const Image(
-                                image: AssetImage('assets/imgs/qamar/k.png'),
+                                image: AssetImage('imgs/uog/uog.png'),
                                 fit: BoxFit.cover,
                               )),
                         ),
@@ -258,7 +258,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: const Image(
-                                image: AssetImage('assets/imgs/qamar/k.png'),
+                                image: AssetImage('imgs/uog/uog.png'),
                                 fit: BoxFit.cover,
                               )),
                         ),
@@ -289,7 +289,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: const Image(
-                                image: AssetImage('assets/imgs/qamar/k.png'),
+                                image: AssetImage('imgs/uog/uog.png'),
                                 fit: BoxFit.cover,
                               )),
                         ),
@@ -320,7 +320,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: const Image(
-                                image: AssetImage('assets/imgs/qamar/k.png'),
+                                image: AssetImage('imgs/uog/uog.png'),
                                 fit: BoxFit.cover,
                               )),
                         ),
@@ -351,7 +351,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: const Image(
-                                image: AssetImage('assets/imgs/qamar/k.png'),
+                                image: AssetImage('imgs/uog/uog.png'),
                                 fit: BoxFit.cover,
                               )),
                         ),
@@ -382,7 +382,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: const Image(
-                                image: AssetImage('assets/imgs/qamar/k.png'),
+                                image: AssetImage('imgs/uog/uog.png'),
                                 fit: BoxFit.cover,
                               )),
                         ),
@@ -417,7 +417,7 @@ class _HomeViewState extends State<HomeView> {
                         icon: (const CircleAvatar(
                           radius: 80,
                           backgroundImage:
-                              AssetImage('assets/imgs/qamar/k.png'),
+                              AssetImage('imgs/uog/uog.png'),
                         ))),
                     Expanded(
                       child: Column(
@@ -468,7 +468,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      Image(image: AssetImage('assets/imgs/qamar/k.png'))
+                      Image(image: AssetImage('imgs/uog/uog.png'))
                     ],
                   ),
                 ),
@@ -580,7 +580,7 @@ class _HomeViewState extends State<HomeView> {
                         icon: (const CircleAvatar(
                           radius: 80,
                           backgroundImage:
-                              AssetImage('assets/imgs/qamar/k.png'),
+                              AssetImage('imgs/uog/uog.png'),
                         ))),
                     Expanded(
                       child: Column(
@@ -631,7 +631,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      Image(image: AssetImage('assets/imgs/qamar/k.png'))
+                      Image(image: AssetImage('imgs/uog/uog.png'))
                     ],
                   ),
                 ),
@@ -743,7 +743,7 @@ class _HomeViewState extends State<HomeView> {
                         icon: (const CircleAvatar(
                           radius: 80,
                           backgroundImage:
-                              AssetImage('assets/imgs/qamar/k.png'),
+                              AssetImage('imgs/uog/uog.png'),
                         ))),
                     Expanded(
                       child: Column(
@@ -794,7 +794,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      Image(image: AssetImage('assets/imgs/qamar/k.png'))
+                      Image(image: AssetImage('imgs/uog/uog.png'))
                     ],
                   ),
                 ),
@@ -906,7 +906,7 @@ class _HomeViewState extends State<HomeView> {
                         icon: (const CircleAvatar(
                           radius: 80,
                           backgroundImage:
-                              AssetImage('assets/imgs/qamar/k.png'),
+                              AssetImage('imgs/uog/uog.png'),
                         ))),
                     Expanded(
                       child: Column(
@@ -957,7 +957,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      Image(image: AssetImage('assets/imgs/qamar/k.png'))
+                      Image(image: AssetImage('imgs/uog/uog.png'))
                     ],
                   ),
                 ),
@@ -1069,7 +1069,7 @@ class _HomeViewState extends State<HomeView> {
                         icon: (const CircleAvatar(
                           radius: 80,
                           backgroundImage:
-                              AssetImage('assets/imgs/qamar/k.png'),
+                              AssetImage('imgs/uog/uog.png'),
                         ))),
                     Expanded(
                       child: Column(
@@ -1120,7 +1120,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      Image(image: AssetImage('assets/imgs/qamar/k.png'))
+                      Image(image: AssetImage('imgs/uog/uog.png'))
                     ],
                   ),
                 ),
@@ -1232,7 +1232,7 @@ class _HomeViewState extends State<HomeView> {
                         icon: (const CircleAvatar(
                           radius: 80,
                           backgroundImage:
-                              AssetImage('assets/imgs/qamar/k.png'),
+                              AssetImage('imgs/uog/uog.png'),
                         ))),
                     Expanded(
                       child: Column(
@@ -1283,7 +1283,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      Image(image: AssetImage('assets/imgs/qamar/k.png'))
+                      Image(image: AssetImage('imgs/uog/uog.png'))
                     ],
                   ),
                 ),

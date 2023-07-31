@@ -62,7 +62,7 @@ class _MemberView extends State<MemberView> {
               child: ListTile(
                 leading: const CircleAvatar(
                   backgroundColor: Colors.yellow,
-                  backgroundImage: AssetImage('assets/imgs/qamar/k.png'),
+                  backgroundImage: AssetImage('imgs/uog/uog.png'),
                 ),
                 title: const Text("CH Qamar"),
                 subtitle: const Text("Owner"),
@@ -143,7 +143,7 @@ class _MemberView extends State<MemberView> {
               child: ListTile(
                 leading: const CircleAvatar(
                   backgroundColor: Colors.yellow,
-                  backgroundImage: AssetImage('assets/imgs/qamar/k.png'),
+                  backgroundImage: AssetImage('imgs/uog/uog.png'),
                 ),
                 title: const Text("CH Qamar"),
                 subtitle: const Text("Owner"),

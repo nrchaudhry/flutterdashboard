@@ -17,7 +17,7 @@ class _DashboardViewState extends State<DashboardView> {
           Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/imgs/qamar/k.png'),
+                    image: AssetImage('imgs/uog/uog.png'),
                     fit: BoxFit.fill)),
           ),
         ]),
