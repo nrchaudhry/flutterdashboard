@@ -3,7 +3,7 @@ import 'package:readmore/readmore.dart';
 
 import 'package:flutterdashboard/config/theme.dart';
 
-import 'package:flutterdashboard/features/header/HeaderView.dart';
+import 'package:flutterdashboard/header/HeaderView.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

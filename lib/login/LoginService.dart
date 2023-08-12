@@ -1,16 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:localstorage/localstorage.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutterdashboard/config/setting.dart';
 
-import 'package:flutterdashboard/services/AppException.dart';
+//import 'package:flutterdashboard/services/AppException.dart';
 import 'package:flutterdashboard/services/HTTPService.dart';
 
 import 'package:flutterdashboard/login/Login.dart';
 
 class LoginService {
+    static final LocalStorage privilegesStorage = LocalStorage('privileges_storage');
+
   static Future<bool> login(String userName, String password) async {
     dynamic responseJson;
     try {
@@ -62,6 +65,21 @@ class LoginService {
       Login.projectTitle = responseJson["ProjectTitle"];
       Login.copyRights = responseJson["CopyRights"];
       Login.headerName = responseJson["HeaderName"];
+
+      // final loginUserPrivilegeResponse = await http.post(
+      //   Uri.parse("${oauthURL}login/userprivileges"),
+      //   headers: {
+      //     HttpHeaders.authorizationHeader: 'bearer $accessToken',
+      //   },
+      //   body: json.encode({
+      //     'application_ID': responseJson["application_ID"],
+      //   }),
+      // );
+
+      // responseJson = HTTPService.returnResponse(loginUserPrivilegeResponse);
+      // privilegesStorage.setItem("userprivileges", responseJson);
+      // Login.privileges = loginUserPrivilegeResponse;
+
     } on SocketException {
       return false;
 //      throw FetchDataException('No Internet Connection');

@@ -1,6 +1,8 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 import 'package:flutter/material.dart';
 
+const headerTitle = "UOG";
+
 Color kPrimaryWhiteColor = Color.fromARGB(255, 245, 242, 242);
 const kPrimaryColor = Color(0xFF3276b1);
 const kSecondaryColor = Color.fromARGB(255, 245, 144, 104);

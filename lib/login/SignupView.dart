@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutterdashboard/config/theme.dart';
 
-import 'package:flutterdashboard/features/header/HeaderView.dart';
-import 'package:flutterdashboard/features/navigationbar/NavigationBarAtLoginView.dart';
+import 'package:flutterdashboard/header/HeaderView.dart';
+import 'package:flutterdashboard/navigationbar/atlogin/NavigationBarAtLoginView.dart';
 
 import '../../login/LoginService.dart';
 

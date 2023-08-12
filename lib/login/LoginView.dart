@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutterdashboard/config/theme.dart';
 
-import 'package:flutterdashboard/features/header/HeaderView.dart';
-import 'package:flutterdashboard/features/navigationbar/NavigationBarView.dart';
+import 'package:flutterdashboard/header/HeaderView.dart';
+import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 import 'package:flutterdashboard/config/setting.dart';
 
 import 'SignupView.dart';

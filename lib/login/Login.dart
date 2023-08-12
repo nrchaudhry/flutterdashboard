@@ -22,4 +22,6 @@ class Login {
   static String projectTitle = "";
   static String headerName ="";
   static String copyRights = "";
+
+  static dynamic privileges = "";
 }
