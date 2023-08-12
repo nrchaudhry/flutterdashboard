@@ -1,14 +1,12 @@
 import 'dart:io';
 
-import 'package:http/http.dart' as http;
-
-import 'package:flutterdashboard/services/AppException.dart';
-import 'package:flutterdashboard/services/HTTPService.dart';
-
 import 'package:flutterdashboard/config/setting.dart';
 import 'package:flutterdashboard/login/Login.dart';
+import 'package:flutterdashboard/services/AppException.dart';
+import 'package:flutterdashboard/services/HTTPService.dart';
+import 'package:http/http.dart' as http;
 
-import 'News.dart';
+import '../../news/News.dart';
 
 class NewsService {
   static Future<List<News>> get() async {

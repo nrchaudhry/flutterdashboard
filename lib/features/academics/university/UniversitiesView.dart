@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutterdashboard/config/theme.dart';
-
 import 'package:flutterdashboard/header/HeaderView.dart';
 
-import 'NewsController.dart';
-import 'News.dart';
-import 'NewsWidget.dart';
+import '../../news/News.dart';
+import '../../news/NewsController.dart';
+import '../../news/NewsWidget.dart';
+
 
 class NewsesView extends StatefulWidget {
   const NewsesView({super.key});

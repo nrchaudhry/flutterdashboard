@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'News.dart';
+import '../../news/News.dart';
 
 class NewsView extends StatelessWidget {
   const NewsView({super.key, required this.news});

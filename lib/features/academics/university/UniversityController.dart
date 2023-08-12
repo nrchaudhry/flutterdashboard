@@ -1,5 +1,6 @@
-import 'News.dart';
-import 'NewsService.dart';
+
+import '../../news/News.dart';
+import '../../news/NewsService.dart';
 
 class NewsController {
   static Future<List<News>> newsGet() async {
