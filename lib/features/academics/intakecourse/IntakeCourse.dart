@@ -1,12 +1,17 @@
- 
+ import 'dart:convert';
 
-//import '../author/Author.dart';
+import '../campus/Campus.dart';
+import '../course/Course.dart';
+import '../intake/Intake.dart';
 
 class Intakecourse {
   final int intakecourseID;
-  final int courseID;
   final int intakeID;
+  final Intake intakeDETAIL;
+  final int courseID;
+  final Course courseDETAIL;
   final int campusID;
+  final Campus campusDETAIL;
   final int locationstudyID;
   final int coursefeeplanID;
   final int coursemodeID;
@@ -22,9 +27,12 @@ class Intakecourse {
 
   const Intakecourse({
     required this.intakecourseID,
-    required this.courseID,
     required this.intakeID,
+    required this.intakeDETAIL,
+    required this.courseID,
+    required this.courseDETAIL,
     required this.campusID,
+    required this.campusDETAIL,
     required this.locationstudyID,
     required this.coursefeeplanID,
     required this.coursemodeID,
@@ -42,9 +50,12 @@ class Intakecourse {
   factory Intakecourse.fromJson(Map<String, dynamic> json) {
     return Intakecourse(
       intakecourseID: json['intakecourse_ID'],
-      courseID: json['course_ID'],
       intakeID: json['intake_ID'],
+      intakeDETAIL: Intake.fromJson(jsonDecode(json['intake_DETAIL'])),
+      courseID: json['course_ID'],
+      courseDETAIL: Course.fromJson(jsonDecode(json['course_DETAIL'])),
       campusID: json['campus_ID'],
+      campusDETAIL: Campus.fromJson(jsonDecode(json['campus_DETAIL'])),
       locationstudyID: json['locationstudy_ID'],
       coursefeeplanID: json['coursefeeplan_ID'],
       coursemodeID: json['coursemode_ID'],

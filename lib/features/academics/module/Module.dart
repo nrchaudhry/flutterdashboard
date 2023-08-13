@@ -1,6 +1,6 @@
- 
+ import 'dart:convert';
 
-//import '../author/Author.dart';
+import '../department/Department.dart';
 
 class Module {
   final int moduleID;
@@ -12,6 +12,7 @@ class Module {
   final String creditHOURS;
   final String guidedlearningHOURS;
   final int departmentID;
+  final Department departmentDETAIL;  
   final String isactive;
 
   const Module({
@@ -24,6 +25,7 @@ class Module {
     required this.creditHOURS,
     required this.guidedlearningHOURS,
     required this.departmentID,
+    required this.departmentDETAIL,    
     required this.isactive,
   });
 
@@ -38,6 +40,7 @@ class Module {
       creditHOURS: json['credit_HOURS'],
       guidedlearningHOURS: json['guidedlearning_HOURS'],
       departmentID: json['department_ID'],
+      departmentDETAIL: Department.fromJson(jsonDecode(json['department_DETAIL'])),
       isactive: json['isactive'],
     );
   }

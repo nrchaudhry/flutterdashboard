@@ -2,9 +2,14 @@
 
 //import '../author/Author.dart';
 
+import 'dart:convert';
+
+import '../qualification/Qualification.dart';
+
 class Course {
   final int courseID;
   final int qualificationID;
+  final Qualification qualificationDETAIL;
   final String courseTITLE;
   final String courseCODE;
   final String courseSHORTTITLE;
@@ -30,6 +35,7 @@ class Course {
   const Course({
     required this.courseID,
     required this.qualificationID,
+    required this.qualificationDETAIL,
     required this.courseTITLE,
     required this.courseCODE,
     required this.courseSHORTTITLE,
@@ -57,6 +63,7 @@ class Course {
     return Course(
       courseID: json['course_ID'],
       qualificationID: json['qualification_ID'],
+      qualificationDETAIL: Qualification.fromJson(jsonDecode(json['qualification_DETAIL'])),
       courseTITLE: json['course_TITLE'],
       courseCODE: json['course_CODE'],
       courseSHORTTITLE: json['course_SHORTTITLE'],

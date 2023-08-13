@@ -1,10 +1,12 @@
+import 'dart:convert';
 
-//import '../author/Author.dart';
+import '../course/Course.dart';
 
 class Coursesubject {
   final int coursesubjectID;
   final int subjectID;
   final int courseID;
+  final Course courseDETAIL;
   final String subjectPERCENTAGE;
   final String isactive;
 
@@ -12,6 +14,7 @@ class Coursesubject {
     required this.coursesubjectID,
     required this.subjectID,
     required this.courseID,
+    required this.courseDETAIL,
     required this.subjectPERCENTAGE,
     required this.isactive,
   });
@@ -21,6 +24,7 @@ class Coursesubject {
       coursesubjectID: json['coursesubject_ID'],
       subjectID: json['subject_ID'],
       courseID: json['course_ID'],
+      courseDETAIL: Course.fromJson(jsonDecode(json['course_DETAIL'])),
       subjectPERCENTAGE: json['subject_PERCENTAGE'],
       isactive: json['isactive'],
     );

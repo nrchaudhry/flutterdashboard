@@ -1,10 +1,17 @@
  
 //import '../author/Author.dart';
 
+import 'dart:convert';
+
+import '../campus/Campus.dart';
+import '../university/University.dart';
+
 class Building {
   final int buildingID;
   final int campusID;
+  final Campus campusDETAIL;
   final int universityID;
+  final University universityDETAIL;
   final String buildingCODE;
   final String buildingNAME;
   final String longitude;
@@ -14,7 +21,9 @@ class Building {
   const Building({
     required this.buildingID,
     required this.campusID,
+    required this.campusDETAIL,
     required this.universityID,
+    required this.universityDETAIL,
     required this.buildingCODE,
     required this.buildingNAME,
     required this.longitude,
@@ -26,7 +35,9 @@ class Building {
     return Building(
       buildingID: json['building_ID'],
       campusID: json['campus_ID'],
+      campusDETAIL: Campus.fromJson(jsonDecode(json['campus_DETAIL'])),
       universityID: json['university_ID'],
+      universityDETAIL: University.fromJson(jsonDecode(json['university_DETAIL'])), 
       buildingCODE: json['building_CODE'],
       buildingNAME: json['building_NAME'],
       longitude: json['longitude'],

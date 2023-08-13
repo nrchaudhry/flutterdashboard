@@ -1,5 +1,7 @@
+import 'dart:convert';
 
-//import '../author/Author.dart';
+import '../college/College.dart';
+import '../university/University.dart';
 
 class Department {
   final int departmentID;
@@ -7,7 +9,9 @@ class Department {
   final String departmentNAME;
   final String departmentDESCRIPTION;
   final int collegeID;
+  final College collegeDETAIL;
   final int universityID;
+  final University universityDETAIL;
   final String isactive;
 
   const Department({
@@ -16,7 +20,9 @@ class Department {
     required this.departmentNAME,
     required this.departmentDESCRIPTION,
     required this.collegeID,
+    required this.collegeDETAIL,
     required this.universityID,
+    required this.universityDETAIL,
     required this.isactive,
   });
 
@@ -27,7 +33,9 @@ class Department {
       departmentNAME: json['department_NAME'],
       departmentDESCRIPTION: json['department_DESCRIPTION'],
       collegeID: json['college_ID'],
+      collegeDETAIL: College.fromJson(jsonDecode(json['college_DETAIL'])),
       universityID: json['university_ID'],
+      universityDETAIL: University.fromJson(jsonDecode(json['university_DETAIL'])),
       isactive: json['isactive'],
     );
   }

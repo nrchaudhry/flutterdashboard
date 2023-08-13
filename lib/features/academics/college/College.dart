@@ -1,10 +1,11 @@
- 
+ import 'dart:convert';
 
-//import '../author/Author.dart';
+import '../university/University.dart';
 
 class College {
   final int collegeID;
   final int universityID;
+  final University universityDETAIL;
   final int collegetypeID;
   final String collegeCODE;
   final String collegeNAME;
@@ -24,6 +25,7 @@ class College {
   const College({
     required this.collegeID,
     required this.universityID,
+    required this.universityDETAIL,
     required this.collegetypeID,
     required this.collegeCODE,
     required this.collegeNAME,
@@ -45,6 +47,7 @@ class College {
     return College(
       collegeID: json['college_ID'],
       universityID: json['university_ID'],
+      universityDETAIL: University.fromJson(jsonDecode(json['university_DETAIL'])), 
       collegetypeID: json['collegetype_ID'],
       collegeCODE: json['college_CODE'],
       collegeNAME: json['college_NAME'],

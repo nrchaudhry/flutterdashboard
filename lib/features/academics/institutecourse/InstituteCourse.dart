@@ -1,5 +1,7 @@
+import 'dart:convert';
 
-//import '../author/Author.dart';
+import '../course/Course.dart';
+import '../institute/Institute.dart';
 
 class Institutecourse {
   final int institutecourseID;
@@ -7,8 +9,10 @@ class Institutecourse {
   final String institutecourseTITLE;
   final String institutecourseSHORTTITLE;
   final int institutecourseCREDITHOURS;
-  final int courseID;
   final int instituteID;
+  final Institute instituteDETAIL;
+  final int courseID;
+  final Course courseDETAIL;
   final String isactive;
 
   const Institutecourse({
@@ -17,8 +21,10 @@ class Institutecourse {
     required this.institutecourseTITLE,
     required this.institutecourseSHORTTITLE,
     required this.institutecourseCREDITHOURS,
-    required this.courseID,
     required this.instituteID,
+    required this.instituteDETAIL,
+    required this.courseID,
+    required this.courseDETAIL,
     required this.isactive,
   });
 
@@ -29,8 +35,10 @@ class Institutecourse {
       institutecourseTITLE: json['institutecourse_TITLE'],
       institutecourseSHORTTITLE: json['institutecourse_SHORTTITLE'],
       institutecourseCREDITHOURS: json['institutecourse_CREDITHOURS'],
-      courseID: json['course_ID'],
       instituteID: json['institute_ID'],
+      instituteDETAIL: Institute.fromJson(jsonDecode(json['institute_DETAIL'])),
+      courseID: json['course_ID'],
+      courseDETAIL: Course.fromJson(jsonDecode(json['course_DETAIL'])),
       isactive: json['isactive'],
     );
   }
