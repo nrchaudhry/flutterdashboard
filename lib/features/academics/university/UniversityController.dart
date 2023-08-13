@@ -1,13 +1,12 @@
+import 'University.dart';
+import 'UniversityService.dart';
 
-import '../../news/News.dart';
-import '../../news/NewsService.dart';
-
-class NewsController {
-  static Future<List<News>> newsGet() async {
-    return await NewsService.get();
+class UniversityController {
+  static Future<List<University>> universityGet() async {
+    return await UniversityService.get();
   }
 
-  static Future<News> newsGetOne(id) async {
-    return await NewsService.getOne(id);
+  static Future<University> universityGetOne(id) async {
+    return await UniversityService.getOne(id);
   }
 }

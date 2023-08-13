@@ -6,82 +6,82 @@ import 'package:flutterdashboard/services/AppException.dart';
 import 'package:flutterdashboard/services/HTTPService.dart';
 import 'package:http/http.dart' as http;
 
-import 'University.dart';
+import 'Semester.dart';
 
-class UniversityService {
-  static Future<List<University>> get() async {
+class SemesterService {
+  static Future<List<Semester>> get() async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'university', request_BODY: ''}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'room', request_BODY: ''}";
     return await callAll(postData);
   }
 
-  static Future<List<University>> getAll() async {
+  static Future<List<Semester>> getAll() async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'university/all', request_BODY: ''}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'room/all', request_BODY: ''}";
     return await callAll(postData);
   }
 
-  static Future<University> getOne(id) async {
+  static Future<Semester> getOne(id) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'university/ $id', request_BODY: ''}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'room/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<University> add(data) async {
+  static Future<Semester> add(data) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'university', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'room', request_BODY: $data}";
     return await call(postData);
   }
 
-  static Future<University> update(data, id) async {
+  static Future<Semester> update(data, id) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'PUT', request_URI: 'university/ $id', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'PUT', request_URI: 'room/ $id', request_BODY: $data}";
     return await call(postData);
   }
 
-  static Future<List<University>> updateAll(data) async {
+  static Future<List<Semester>> updateAll(data) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'PUT', request_URI: 'university', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'PUT', request_URI: 'room', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<University> delete(id) async {
+  static Future<Semester> delete(id) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'DELETE', request_URI: 'university/ $id', request_BODY: ''}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'DELETE', request_URI: 'room/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<University> remove(id) async {
+  static Future<Semester> remove(id) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'university/remove/ $id', request_BODY: ''}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'GET', request_URI: 'room/remove/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<List<University>> search(data) async {
+  static Future<List<Semester>> search(data) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'university/search', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'room/search', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<University>> searchAll(data) async {
+  static Future<List<Semester>> searchAll(data) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'university/search/all', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'room/search/all', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<University>> advancedSearch(data) async {
+  static Future<List<Semester>> advancedSearch(data) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'university/advancedsearch', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'room/advancedsearch', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<University>> advancedSearchAll(data) async {
+  static Future<List<Semester>> advancedSearchAll(data) async {
     var postData =
-        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'university/advancedsearch/all', request_BODY: $data}";
+        "{service_NAME: $academicsserviceNAME, request_TYPE: 'POST', request_URI: 'room/advancedsearch/all', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<University>> callAll(String postData) async {
+  static Future<List<Semester>> callAll(String postData) async {
     dynamic responseJson;
     try {
       final response = await http.post(
@@ -106,10 +106,10 @@ class UniversityService {
     }
 
     final parsed = responseJson.cast<Map<String, dynamic>>();
-    return parsed.map<University>((json) => University.fromJson(json)).toList();
+    return parsed.map<Semester>((json) => Semester.fromJson(json)).toList();
   }
 
-  static Future<University> call(String postData) async {
+  static Future<Semester> call(String postData) async {
     dynamic responseJson;
     try {
       final response = await http.post(
@@ -133,6 +133,6 @@ class UniversityService {
       throw FetchDataException('No Internet Connection');
     }
 
-    return University.fromJson(responseJson);
+    return Semester.fromJson(responseJson);
   }
 }
