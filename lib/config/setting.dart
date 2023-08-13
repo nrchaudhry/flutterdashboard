@@ -14,6 +14,8 @@ const String icon = 'http://cwiztech.com/design/images/favicon.ico';
 const String serviceNAME = 'LOOKUP';
 const String newsserviceNAME = 'NEWS';
 const String academicsserviceNAME = 'ACADEMICS';
+const String locationserviceNAME = 'LOCATION';
+
 
 class Highlight {
   String thumbnail;
