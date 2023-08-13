@@ -2,54 +2,54 @@
 
 //import '../author/Author.dart';
 
-class News {
-  final int newsID;
+class University {
+  final int universityID;
   final int authorID;
 //  final Author authorDETAIL;
-  final int newscategoryID;
-  final String newscategoryDETAIL;
-  final String newsDATETIME;
-  final String newsTITLE;
-  final String newsCONTENT;
+  final int universitycategoryID;
+  final String universitycategoryDETAIL;
+  final String universityDATETIME;
+  final String universityTITLE;
+  final String universityCONTENT;
   final String mediacontentPATH;
-  final int newsstatusID;
-  final String newsstatusDETAIL;
-  final int newscommentstatusID;
-  final String newscommentstatusDETAIL;
+  final int universitystatusID;
+  final String universitystatusDETAIL;
+  final int universitycommentstatusID;
+  final String universitycommentstatusDETAIL;
   final String isactive;
 
-  const News({
-    required this.newsID,
+  const University({
+    required this.universityID,
     required this.authorID,
 //    required this.authorDETAIL,
-    required this.newscategoryID,
-    required this.newscategoryDETAIL,
-    required this.newsDATETIME,
-    required this.newsTITLE,
-    required this.newsCONTENT,
+    required this.universitycategoryID,
+    required this.universitycategoryDETAIL,
+    required this.universityDATETIME,
+    required this.universityTITLE,
+    required this.universityCONTENT,
     required this.mediacontentPATH,
-    required this.newsstatusID,
-    required this.newsstatusDETAIL,
-    required this.newscommentstatusID,
-    required this.newscommentstatusDETAIL,
+    required this.universitystatusID,
+    required this.universitystatusDETAIL,
+    required this.universitycommentstatusID,
+    required this.universitycommentstatusDETAIL,
     required this.isactive,
   });
 
-  factory News.fromJson(Map<String, dynamic> json) {
-    return News(
-      newsID: json['news_ID'],
+  factory University.fromJson(Map<String, dynamic> json) {
+    return University(
+      universityID: json['university_ID'],
       authorID: json['author_ID'],
 //      authorDETAIL: Author.fromJson(jsonDecode(json['author_DETAIL'])),
-      newscategoryID: json['newscategory_ID'],
-      newscategoryDETAIL: json['newscategory_DETAIL'],
-      newsDATETIME: json['news_DATETIME'],
-      newsTITLE: json['news_TITLE'],
-      newsCONTENT: json['news_CONTENT'],
+      universitycategoryID: json['universitycategory_ID'],
+      universitycategoryDETAIL: json['universitycategory_DETAIL'],
+      universityDATETIME: json['university_DATETIME'],
+      universityTITLE: json['university_TITLE'],
+      universityCONTENT: json['university_CONTENT'],
       mediacontentPATH: json['mediacontent_PATH'],
-      newsstatusID: json['newsstatus_ID'],
-      newsstatusDETAIL: json['newsstatus_DETAIL'],
-      newscommentstatusID: json['newscommentstatus_ID'],
-      newscommentstatusDETAIL: json['newscommentstatus_DETAIL'],
+      universitystatusID: json['universitystatus_ID'],
+      universitystatusDETAIL: json['universitystatus_DETAIL'],
+      universitycommentstatusID: json['universitycommentstatus_ID'],
+      universitycommentstatusDETAIL: json['universitycommentstatus_DETAIL'],
       isactive: json['isactive'],
     );
   }

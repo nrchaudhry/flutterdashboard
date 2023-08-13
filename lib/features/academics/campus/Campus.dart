@@ -1,11 +1,11 @@
- 
+import 'dart:convert'; 
 
-//import '../author/Author.dart';
+import '../university/University.dart';
 
 class Campus {
   final int campusID;
   final int universityID;
-  final int email;
+  final University universityDETAIL;
   final String campusCODE;
   final String campusNAME;
   final String campusDESCRIPTION;
@@ -18,12 +18,13 @@ class Campus {
   final String locationID;
   final String telephone;
   final String faxno;
+  final int email;
   final String isactive;
 
   const Campus({
     required this.campusID,
     required this.universityID,
-    required this.email,
+    required this.universityDETAIL,
     required this.campusCODE,
     required this.campusNAME,
     required this.campusDESCRIPTION,
@@ -36,6 +37,7 @@ class Campus {
     required this.locationID,
     required this.telephone,
     required this.faxno,
+    required this.email,
     required this.isactive,
   });
 
@@ -43,7 +45,7 @@ class Campus {
     return Campus(
       campusID: json['campus_ID'],
       universityID: json['university_ID'],
-      email: json['email'],
+      universityDETAIL: University.fromJson(jsonDecode(json['university_DETAIL'])),
       campusCODE: json['campus_CODE'],
       campusNAME: json['campus_NAME'],
       campusDESCRIPTION: json['campus_DESCRIPTION'],
@@ -56,6 +58,7 @@ class Campus {
       locationID: json['location_ID'],
       telephone: json['telephone'],
       faxno: json['faxno'],
+      email: json['email'],
       isactive: json['isactive'],
     );
   }
