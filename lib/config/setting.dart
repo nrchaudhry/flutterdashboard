@@ -15,7 +15,9 @@ const String serviceNAME = 'LOOKUP';
 const String newsserviceNAME = 'NEWS';
 const String academicsserviceNAME = 'ACADEMICS';
 const String locationserviceNAME = 'LOCATION';
-
+const String personserviceNAME = 'PERSON';
+const String employeeserviceNAME = 'EMPLOYEE';
+const String companyserviceNAME = 'COMPANY';
 
 class Highlight {
   String thumbnail;
