@@ -18,6 +18,7 @@ const String locationserviceNAME = 'LOCATION';
 const String personserviceNAME = 'PERSON';
 const String employeeserviceNAME = 'EMPLOYEE';
 const String companyserviceNAME = 'COMPANY';
+const String productserviceNAME = 'PRODUCT';
 
 class Highlight {
   String thumbnail;
