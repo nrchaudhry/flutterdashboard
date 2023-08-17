@@ -16,10 +16,10 @@ class College {
   final String addressLINE4;
   final String addressLINE5;
   final String addressPOSTCODE;
-  final String locationID;
-  final int telephone;
+  final int locationID;
+  final String telephone;
   final String faxno;
-  final int email;
+  final String email;
   final String isactive;
 
   const College({
