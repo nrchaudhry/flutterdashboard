@@ -13,12 +13,12 @@ class Institute {
   final String addressLINE4;
   final String addressLINE5;
   final String addressPOSTCODE;
-  final String locationID;
-  final int telephone;
+  final int locationID;
+  final String telephone;
   final String faxno;
-  final int email;
-  final int logoPATH;
-  final int iconPATH;
+  final String email;
+  final String logoPATH;
+  final String iconPATH;
   final String isactive;
 
   const Institute({
