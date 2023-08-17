@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:localstorage/localstorage.dart';
+//import 'package:localstorage/localstorage.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutterdashboard/config/setting.dart';
@@ -12,7 +12,7 @@ import 'package:flutterdashboard/services/HTTPService.dart';
 import 'package:flutterdashboard/login/Login.dart';
 
 class LoginService {
-    static final LocalStorage privilegesStorage = LocalStorage('privileges_storage');
+//    static final LocalStorage privilegesStorage = LocalStorage('privileges_storage');
 
   static Future<bool> login(String userName, String password) async {
     dynamic responseJson;

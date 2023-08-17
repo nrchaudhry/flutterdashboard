@@ -1,7 +1,7 @@
-const String oauthURL = "http://api.cwiztech.com:8080/";
+const String oauthURL = "http://local.cwiztech.com:8080/";
 const String authBasic = 'VXNlck1hbmFnbWVudDpzZWNyZXQ=';
 
-const String applicationCode = 'CWIZTECHApplicationManagement';
+const String applicationCode = 'KairaGroupMobileApp';
 const String applicationTitle = 'Flutter Dashboard';
 
 const String companyName = 'Compuwiz Technologies';
@@ -12,13 +12,13 @@ const String loginBanner1 = 'http://cwiztech.com/design/images/intro-back.jpeg';
 const String icon = 'http://cwiztech.com/design/images/favicon.ico';
 
 const String serviceNAME = 'LOOKUP';
-const String newsserviceNAME = 'NEWS';
-const String academicsserviceNAME = 'ACADEMICS';
+const String newsserviceNAME = 'CWIZTECHNEWS';
+const String academicsserviceNAME = 'CWIZTECHACADEMICS';
 const String locationserviceNAME = 'LOCATION';
 const String personserviceNAME = 'PERSON';
 const String employeeserviceNAME = 'EMPLOYEE';
 const String companyserviceNAME = 'COMPANY';
-const String productserviceNAME = 'PRODUCT';
+const String productserviceNAME = 'CWIZTECHPRODUCT';
 
 class Highlight {
   String thumbnail;

@@ -6,7 +6,7 @@ import 'package:flutterdashboard/config/theme.dart';
 import 'package:flutterdashboard/login/Login.dart';
 
 import 'package:flutterdashboard/features/dashboard/DashboardView.dart';
-import 'package:flutterdashboard/features/news/NewsesView.dart';
+import 'package:flutterdashboard/features/academics/campus/CampusesView.dart';
 
 class NavigationBarView extends StatefulWidget {
   const NavigationBarView({super.key});
@@ -22,7 +22,7 @@ class _NavigationBarViewState extends State<NavigationBarView> {
   int active = 0;
   final screens = const [
     DashboardView(),
-    NewsesView(),
+    CampusesView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _NavigationBarViewState extends State<NavigationBarView> {
           ),
           NavigationDestination(
             icon: Icon(Icons.newspaper),
-            label: 'News',
+            label: 'Campus',
             selectedIcon: Icon(
               Icons.newspaper,
               color: Colors.white,

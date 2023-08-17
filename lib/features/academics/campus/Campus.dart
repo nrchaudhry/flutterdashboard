@@ -5,7 +5,7 @@ import '../university/University.dart';
 class Campus {
   final int campusID;
   final int universityID;
-  final University universityDETAIL;
+  final String universityDETAIL;
   final String campusCODE;
   final String campusNAME;
   final String campusDESCRIPTION;
@@ -15,10 +15,10 @@ class Campus {
   final String addressLINE4;
   final String addressLINE5;
   final String addressPOSTCODE;
-  final String locationID;
+  final int locationID;
   final String telephone;
   final String faxno;
-  final int email;
+  final String email;
   final String isactive;
 
   const Campus({
@@ -45,7 +45,7 @@ class Campus {
     return Campus(
       campusID: json['campus_ID'],
       universityID: json['university_ID'],
-      universityDETAIL: University.fromJson(jsonDecode(json['university_DETAIL'])),
+      universityDETAIL: "University.fromJson(jsonDecode(json['university_DETAIL']))",
       campusCODE: json['campus_CODE'],
       campusNAME: json['campus_NAME'],
       campusDESCRIPTION: json['campus_DESCRIPTION'],
