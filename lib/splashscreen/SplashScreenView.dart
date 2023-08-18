@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -38,8 +40,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
             width: 300,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('imgs/uog/uog.png'),
-                    fit: BoxFit.fill)),
+                    image: AssetImage('imgs/uog/uog.png'), fit: BoxFit.fill)),
           ),
         ),
       ),

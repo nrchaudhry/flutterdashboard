@@ -5,82 +5,82 @@ import 'package:flutterdashboard/services/AppException.dart';
 import 'package:flutterdashboard/services/HTTPService.dart';
 import 'package:http/http.dart' as http;
 
-import 'Product.dart';
+import 'ProductItem.dart';
 
-class ProductService {
-  static Future<List<Product>> get() async {
+class ProductitemService {
+  static Future<List<Productitem>> get() async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'product', request_BODY: ''}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem', request_BODY: ''}";
     return await callAll(postData);
   }
 
-  static Future<List<Product>> getAll() async {
+  static Future<List<Productitem>> getAll() async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'product/all', request_BODY: ''}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem/all', request_BODY: ''}";
     return await callAll(postData);
   }
 
-  static Future<Product> getOne(id) async {
+  static Future<Productitem> getOne(id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'product/ $id', request_BODY: ''}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<Product> add(data) async {
+  static Future<Productitem> add(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'product', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem', request_BODY: $data}";
     return await call(postData);
   }
 
-  static Future<Product> update(data, id) async {
+  static Future<Productitem> update(data, id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'product/ $id', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'productitem/ $id', request_BODY: $data}";
     return await call(postData);
   }
 
-  static Future<List<Product>> updateAll(data) async {
+  static Future<List<Productitem>> updateAll(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'product', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'productitem', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<Product> delete(id) async {
+  static Future<Productitem> delete(id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'DELETE', request_URI: 'product/ $id', request_BODY: ''}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'DELETE', request_URI: 'productitem/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<Product> remove(id) async {
+  static Future<Productitem> remove(id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'product/remove/ $id', request_BODY: ''}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem/remove/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<List<Product>> search(data) async {
+  static Future<List<Productitem>> search(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'product/search', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/search', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Product>> searchAll(data) async {
+  static Future<List<Productitem>> searchAll(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'product/search/all', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/search/all', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Product>> advancedSearch(data) async {
+  static Future<List<Productitem>> advancedSearch(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'product/advancedsearch', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/advancedsearch', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Product>> advancedSearchAll(data) async {
+  static Future<List<Productitem>> advancedSearchAll(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'product/advancedsearch/all', request_BODY: $data}";
+        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/advancedsearch/all', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Product>> callAll(String postData) async {
+  static Future<List<Productitem>> callAll(String postData) async {
     dynamic responseJson;
     try {
       final response = await http.post(
@@ -105,10 +105,12 @@ class ProductService {
     }
 
     final parsed = responseJson.cast<Map<String, dynamic>>();
-    return parsed.map<Product>((json) => Product.fromJson(json)).toList();
+    return parsed
+        .map<Productitem>((json) => Productitem.fromJson(json))
+        .toList();
   }
 
-  static Future<Product> call(String postData) async {
+  static Future<Productitem> call(String postData) async {
     dynamic responseJson;
     try {
       final response = await http.post(
@@ -132,6 +134,6 @@ class ProductService {
       throw FetchDataException('No Internet Connection');
     }
 
-    return Product.fromJson(responseJson);
+    return Productitem.fromJson(responseJson);
   }
 }
