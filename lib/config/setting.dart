@@ -19,6 +19,7 @@ const String personserviceNAME = 'PERSON';
 const String employeeserviceNAME = 'EMPLOYEE';
 const String companyserviceNAME = 'COMPANY';
 const String productserviceNAME = 'CWIZTECHPRODUCT';
+const String fitnessserviceNAME = 'CWIZTECHFITNESS';
 
 class Highlight {
   String thumbnail;
