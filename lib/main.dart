@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdashboard/splashscreen/SplashScreenView.dart';
+import 'package:flutterdashboard/features/employeeQR/Load%20Screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const SplashScreenView(),
+      // home: const SplashScreenView(),
+      home: SplashScreen(),
     );
   }
 }
