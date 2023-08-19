@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdashboard/splashscreen/SplashScreenView.dart';
 
+import 'features/healthcare/Dashboard/main_dashboard.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const SplashScreenView(),
+      // home: const SplashScreenView(),
+      home: DashboardScreen(),
     );
   }
 }

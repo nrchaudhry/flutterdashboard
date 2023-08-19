@@ -6,6 +6,7 @@ import 'package:flutterdashboard/header/HeaderView.dart';
 import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 import 'package:flutterdashboard/config/setting.dart';
 
+import '../features/healthcare/Dashboard/main_dashboard.dart';
 import 'SignupView.dart';
 
 import '../../login/LoginService.dart';
@@ -204,8 +205,8 @@ class _LoginViewState extends State<LoginView> {
                     //decoration: BoxDecoration(color: Colors.red),
                     child: ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              kSecondaryColor)),
+                          backgroundColor:
+                              MaterialStateProperty.all(kSecondaryColor)),
                       onPressed: () async {
                         if (emailController.text.toString() == "") {
                           const snackBar = SnackBar(
@@ -226,7 +227,7 @@ class _LoginViewState extends State<LoginView> {
                           if (response == true) {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (_) => const NavigationBarView()));
+                                    builder: (_) => DashboardScreen()));
                           } else {
                             const snackBar = SnackBar(
                               content: Text('Invalid User Name/Password!'),
