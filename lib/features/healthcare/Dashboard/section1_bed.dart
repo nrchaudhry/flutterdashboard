@@ -4,7 +4,6 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdashboard/features/healthcare/AppBar/app_bar.dart';
 
-
 class SectionBed extends StatefulWidget {
   const SectionBed({super.key});
 

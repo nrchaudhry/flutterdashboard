@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool showBackButton;
+  final bool implyleadingbtn = false;
 
-  const TopAppBar({
-    Key? key,
-    required this.title,
-    this.showBackButton = true,
-  }) : super(key: key);
+  const TopAppBar(
+      {Key? key,
+      required this.title,
+      this.showBackButton = true,
+      implyleadingbtn})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 90, // Set the desired height
       child: AppBar(
+        automaticallyImplyLeading: implyleadingbtn,
         backgroundColor: Colors.white,
         leading: showBackButton
             ? IconButton(
