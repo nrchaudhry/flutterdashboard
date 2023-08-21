@@ -1,13 +1,16 @@
 import 'dart:convert';
 
+import '../transportroute/TransportRoute.dart';
+import '../transportstaff/TransportStaff.dart';
+
 //import '../university/University.dart';
 
 class Transportroutestaff {
   final int transportroutestaffID;
   final int transportstaffID;
-  final String transportstaffDETAIL;
+  final Transportstaff transportstaffDETAIL;
   final int transportrouteID;
-  final String transportrouteDETAIL;
+  final Transportroute transportrouteDETAIL;
   final String transportroutestaffDATE;
   final String isactive;
 
@@ -25,11 +28,9 @@ class Transportroutestaff {
     return Transportroutestaff(
       transportroutestaffID: json['transportroutestaffID'],
       transportstaffID: json['transportstaffID'],
-      transportstaffDETAIL:
-          "Transportstaff.fromJson(jsonDecode(json['transportstaffDETAIL']))",
+      transportstaffDETAIL:Transportstaff.fromJson(jsonDecode(json['transportstaffDETAIL'])),
       transportrouteID: json['transportrouteID'],
-      transportrouteDETAIL:
-          "Transportroute.fromJson(jsonDecode(json['transportrouteDETAIL']))",
+      transportrouteDETAIL:Transportroute.fromJson(jsonDecode(json['transportrouteDETAIL'])),
       transportroutestaffDATE: json['transportroutestaffDATE'],
       isactive: json['isactive'],
     );

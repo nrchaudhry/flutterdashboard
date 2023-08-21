@@ -1,6 +1,5 @@
 import 'RouteLocationService.dart';
 import 'Routelocation.dart';
-import 'RoutelocationService.dart';
 
 class RoutelocationController {
   static Future<List<Routelocation>> RoutelocationGet() async {

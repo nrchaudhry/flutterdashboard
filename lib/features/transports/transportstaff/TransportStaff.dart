@@ -1,11 +1,10 @@
-import 'dart:convert';
 
-//import '../university/University.dart';
+
 
 class Transportstaff {
   final int transportstaffID;
-  final int stafftypeID;
-  final String stafftypeDETAIL;
+  // final int stafftypeID;
+  // final Stafftype stafftypeDETAIL;
   final String title;
   final String surname;
   final String forenames;
@@ -15,8 +14,8 @@ class Transportstaff {
 
   const Transportstaff({
     required this.transportstaffID,
-    required this.stafftypeID,
-    required this.stafftypeDETAIL,
+    // required this.stafftypeID,
+    // required this.stafftypeDETAIL,
     required this.title,
     required this.surname,
     required this.forenames,
@@ -28,9 +27,8 @@ class Transportstaff {
   factory Transportstaff.fromJson(Map<String, dynamic> json) {
     return Transportstaff(
       transportstaffID: json['transportstaff_ID'],
-      stafftypeID: json['stafftype_ID'],
-      stafftypeDETAIL:
-          "Stafftype.fromJson(jsonDecode(json['stafftype_DETAIL']))",
+      // stafftypeID: json['stafftype_ID'],
+      // stafftypeDETAIL: Stafftype.fromJson(jsonDecode(json['stafftype_DETAIL'])),
       title: json['title'],
       surname: json['surname'],
       forenames: json['forenames'],

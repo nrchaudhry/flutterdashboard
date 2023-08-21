@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
-import 'Section1 - Ward/section1_ward.dart';
-import '../Bottom Navigation/bottom_navigation_bar.dart';
+
 import '../AppBar/app_bar.dart';
+import '../Bottom Navigation/bottom_navigation_bar.dart';
+import 'Section1 - Ward/section1_ward.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
