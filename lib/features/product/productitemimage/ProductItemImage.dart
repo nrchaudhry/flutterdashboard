@@ -4,26 +4,26 @@ import 'dart:convert';
 
 class Productitemimage {
   final int productitemimageID;
-  final int ProductitemID;
-  final String ProductitemDETAIL;
-  final String ProductitemimagePATH;
+  final int productitemID;
+  final String productitemDETAIL;
+  final String productitemimagePATH;
   final String isactive;
 
   const Productitemimage({
     required this.productitemimageID,
-    required this.ProductitemID,
-    required this.ProductitemDETAIL,
-    required this.ProductitemimagePATH,
+    required this.productitemID,
+    required this.productitemDETAIL,
+    required this.productitemimagePATH,
     required this.isactive,
   });
 
   factory Productitemimage.fromJson(Map<String, dynamic> json) {
     return Productitemimage(
       productitemimageID: json['productitemimage_ID'],
-      ProductitemID: json[' Productitem_ID'],
-      ProductitemDETAIL:
-          "Productitem.fromJson(jsonDecode(json['Productitem_DETAIL']))",
-      ProductitemimagePATH: json['Productitemimage_PATH'],
+      productitemID: json[' productitem_ID'],
+      productitemDETAIL:
+          "Productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
+      productitemimagePATH: json['productitemimage_PATH'],
       isactive: json['isactive'],
     );
   }

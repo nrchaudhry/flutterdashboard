@@ -28,10 +28,10 @@ class Productitemattributevalue {
       productitemattributevalueID: json['productitemattributevalue_ID'],
       productitemID: json['productitem_ID'],
       productitemDETAIL:
-          "productitem.fromJson(jsonDecode(json[' productitem_DETAIL']))",
+          "Productitem.fromJson(jsonDecode(json[' productitem_DETAIL']))",
       productattributeID: json[' productattribute_ID'],
       productattributeDETAIL:
-          " productattribute.fromJson(jsonDecode(json[' productattribute_DETAIL']))",
+          " Productattribute.fromJson(jsonDecode(json[' productattribute_DETAIL']))",
       productattributevalueID: json['productattributevalue_ID'],
       productattributeitemVALUE: json['productattributeitem_VALUE'],
       isactive: json['isactive'],

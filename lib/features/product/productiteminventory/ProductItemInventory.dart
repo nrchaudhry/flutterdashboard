@@ -72,9 +72,9 @@ class Productiteminventory {
       productiteminventoryID: json['productiteminventory_ID'],
       productitemID: json['productitem_ID'],
       productitemDETAIL:
-          "productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
+          "Productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
       locationID: json['location_ID'],
-      locationDETAIL: "location.fromJson(jsonDecode(json['location_DETAIL']))",
+      locationDETAIL: "Location.fromJson(jsonDecode(json['location_DETAIL']))",
       quantityONHAND: json['quantitys_ONHAND'],
       quantityONORDER: json['quantity_ONORDER'],
       quantityCOMMITTED: json['quantity_COMMITTED'],

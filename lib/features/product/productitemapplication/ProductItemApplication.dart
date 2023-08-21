@@ -24,10 +24,10 @@ class Productitemapplication {
       productitemapplicationID: json['productitemapplication_ID'],
       applicationID: json['application_ID'],
       applicationDETAIL:
-          "application.fromJson(jsonDecode(json['application_DETAIL']))",
+          "Application.fromJson(jsonDecode(json['application_DETAIL']))",
       productitemID: json['productitem_ID'],
       productitemDETAIL:
-          "productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
+          "Productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
       isactive: json['isactive'],
     );
   }
