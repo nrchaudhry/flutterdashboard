@@ -49,6 +49,9 @@ dependencies:
   table_calendar: ^3.0.7
   image_picker: ^0.8.7
   localstorage: ^4.0.1+4
+  maps_launcher: ^2.2.0
+  geolocator: ^9.0.2
+  flutter_polyline_points: ^1.0.0
 
 dev_dependencies:
   flutter_test:

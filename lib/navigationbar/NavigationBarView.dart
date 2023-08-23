@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutterdashboard/login/privilege/Privilege.dart';
+//import 'package:flutterdashboard/login/privilege/Privilege.dart';
 
 import 'package:flutterdashboard/config/theme.dart';
-import 'package:flutterdashboard/login/Login.dart';
+//import 'package:flutterdashboard/login/Login.dart';
 
 import 'package:flutterdashboard/features/dashboard/DashboardView.dart';
-import 'package:flutterdashboard/features/academics/campus/CampusesView.dart';
+import 'package:flutterdashboard/features/academics/building/BuildingMapView.dart';
 
 class NavigationBarView extends StatefulWidget {
   const NavigationBarView({super.key});
@@ -22,7 +22,7 @@ class _NavigationBarViewState extends State<NavigationBarView> {
   int active = 0;
   final screens = const [
     DashboardView(),
-    CampusesView(),
+    BuildingMapView(),
   ];
   @override
   Widget build(BuildContext context) {
