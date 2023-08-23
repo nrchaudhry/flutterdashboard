@@ -1,6 +1,6 @@
-import 'dart:convert'; 
+import 'dart:convert';
 
-import '../university/University.dart';
+import '../../location/location/Location.dart';
 
 class Campus {
   final int campusID;
@@ -16,6 +16,7 @@ class Campus {
   final String addressLINE5;
   final String addressPOSTCODE;
   final int locationID;
+  final Location locationDETAIL;
   final String telephone;
   final String faxno;
   final String email;
@@ -35,6 +36,7 @@ class Campus {
     required this.addressLINE5,
     required this.addressPOSTCODE,
     required this.locationID,
+    required this.locationDETAIL,
     required this.telephone,
     required this.faxno,
     required this.email,
@@ -56,6 +58,7 @@ class Campus {
       addressLINE5: json['address_LINE5'],
       addressPOSTCODE: json['address_POSTCODE'],
       locationID: json['location_ID'],
+      locationDETAIL: Location.fromJson(jsonDecode(json['location_DETAIL'])),
       telephone: json['telephone'],
       faxno: json['faxno'],
       email: json['email'],

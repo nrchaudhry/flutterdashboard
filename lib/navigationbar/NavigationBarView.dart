@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 //import 'package:flutterdashboard/login/privilege/Privilege.dart';
 
 import 'package:flutterdashboard/config/theme.dart';
 //import 'package:flutterdashboard/login/Login.dart';
+=======
+// import 'package:flutterdashboard/login/privilege/Privilege.dart';
+
+import 'package:flutterdashboard/config/theme.dart';
+// import 'package:flutterdashboard/login/Login.dart';
+>>>>>>> a51dab8d2a636e70011a88f0d76bbee54ebabb1a
 
 import 'package:flutterdashboard/features/dashboard/DashboardView.dart';
 import 'package:flutterdashboard/features/academics/building/BuildingMapView.dart';

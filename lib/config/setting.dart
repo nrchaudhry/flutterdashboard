@@ -19,6 +19,8 @@ const String personserviceNAME = 'PERSON';
 const String employeeserviceNAME = 'EMPLOYEE';
 const String companyserviceNAME = 'COMPANY';
 const String productserviceNAME = 'CWIZTECHPRODUCT';
+const String fitnessserviceNAME = 'CWIZTECHFITNESS';
+const String transportserviceNAME = 'MYZFDLTRANSPORT';
 
 
 class Highlight {
