@@ -6,10 +6,9 @@ import 'package:flutterdashboard/header/HeaderView.dart';
 import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 import 'package:flutterdashboard/config/setting.dart';
 
-import '../features/healthcare/Dashboard/main_dashboard.dart';
 import 'SignupView.dart';
 
-import '../../login/LoginService.dart';
+import 'LoginService.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -227,7 +226,7 @@ class _LoginViewState extends State<LoginView> {
                           if (response == true) {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (_) => DashboardScreen()));
+                                    builder: (_) => NavigationBarView()));
                           } else {
                             const snackBar = SnackBar(
                               content: Text('Invalid User Name/Password!'),

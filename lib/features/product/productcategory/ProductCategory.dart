@@ -1,36 +1,33 @@
-class Productcategory {
+class ProductCategory {
   final int productcategoryID;
-  final int netsuiteID;
-  final int productcategoryorderNo;
-  final String productcategoryNAME;
-  final String productcategoryDESC;
-  final String productcategoryCODE;
-  final int productcategoryparentID;
-  final String quickbookID;
+  final dynamic productcategoryparentID;
+  final dynamic productcategoryorderNo;
+  final dynamic productcategoryCODE;
+  final dynamic productcategoryNAME;
+  final dynamic productcategoryDESC;
+  final dynamic productcategoryiconURL;
   final String isactive;
 
-  const Productcategory({
+  const ProductCategory({
     required this.productcategoryID,
-    required this.netsuiteID,
+    required this.productcategoryparentID,
     required this.productcategoryorderNo,
+    required this.productcategoryCODE,
     required this.productcategoryNAME,
     required this.productcategoryDESC,
-    required this.productcategoryCODE,
-    required this.productcategoryparentID,
-    required this.quickbookID,
+    required this.productcategoryiconURL,
     required this.isactive,
   });
 
-  factory Productcategory.fromJson(Map<String, dynamic> json) {
-    return Productcategory(
+  factory ProductCategory.fromJson(Map<String, dynamic> json) {
+    return ProductCategory(
       productcategoryID: json['productcategory_ID'],
-      netsuiteID: json['netsuite_ID'],
+      productcategoryparentID: json['productcategoryparent_ID'],
       productcategoryorderNo: json['productcategoryorder_No'],
+      productcategoryCODE: json['productcategory_CODE'],
       productcategoryNAME: json['productcategory_NAME'],
       productcategoryDESC: json['productcategory_DESC'],
-      productcategoryCODE: json['productcategory_CODE'],
-      productcategoryparentID: json['productcategoryparent_ID'],
-      quickbookID: json['quickbook_ID'],
+      productcategoryiconURL: json['productcategoryicon_URL'],
       isactive: json['isactive'],
     );
   }

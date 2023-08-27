@@ -1,12 +1,12 @@
 import 'ProductCategory.dart';
 import 'ProductCategoryService.dart';
 
-class ProductcategoryController {
-  static Future<List<Productcategory>> productcategoryGet() async {
-    return await ProductcategoryService.get();
+class ProductCategoryController {
+  static Future<List<ProductCategory>> productcategoryGet() async {
+    return await ProductCategoryService.get();
   }
 
-  static Future<Productcategory> productcategoryGetOne(id) async {
-    return await ProductcategoryService.getOne(id);
+  static Future<ProductCategory> productcategoryGetOne(id) async {
+    return await ProductCategoryService.getOne(id);
   }
 }

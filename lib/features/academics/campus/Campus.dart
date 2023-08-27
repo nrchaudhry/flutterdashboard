@@ -6,11 +6,11 @@ class Campus {
   final int campusID;
   final int universityID;
   final String universityDETAIL;
-  final String campusCODE;
-  final String campusNAME;
+  final dynamic campusCODE;
+  final dynamic campusNAME;
   final String campusDESCRIPTION;
-  final String addressLINE1;
-  final String addressLINE2;
+  final dynamic addressLINE1;
+  final dynamic addressLINE2;
   final String addressLINE3;
   final String addressLINE4;
   final String addressLINE5;

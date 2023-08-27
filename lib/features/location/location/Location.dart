@@ -1,19 +1,19 @@
  class Location {
   final int locationID;
-  final String locationNAME;
   final String locationCODE;
-  final String locationDESC;
-  final int locationleveltypeID;
-  final int locationparentID;
-  final String latitude;
-  final String longitude;
-  final String altitude;
+  final String locationNAME;
+  final dynamic locationDESC;
+  final dynamic locationleveltypeID;
+  final dynamic locationparentID;
+  final dynamic latitude;
+  final dynamic longitude;
+  final dynamic altitude;
   final String isactive;
 
   const Location({
     required this.locationID,
-    required this.locationNAME,
     required this.locationCODE,
+    required this.locationNAME,
     required this.locationDESC,
     required this.locationleveltypeID,
     required this.locationparentID,

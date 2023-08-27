@@ -1,7 +1,7 @@
-const String oauthURL = "http://local.cwiztech.com:8080/";
+const String oauthURL = "http://api.cwiztech.com:8080/";
 const String authBasic = 'VXNlck1hbmFnbWVudDpzZWNyZXQ=';
 
-const String applicationCode = 'KairaGroupMobileApp';
+const String applicationCode = 'CWIZTECHApplicationManagement';
 const String applicationTitle = 'Flutter Dashboard';
 
 const String companyName = 'Compuwiz Technologies';
@@ -37,3 +37,5 @@ List<Highlight> highlightItems = [
   Highlight(thumbnail: 'assets/images/swimming.jpg', title: "Pool 🌊"),
   Highlight(thumbnail: 'assets/images/yoga.jpg', title: "Yoga 💪🏻"),
 ];
+
+//flutter run -d chrome --web-renderer html

@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/navigationbar/atlogin/NavigationBarAtLoginView.dart';
+import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 
-import '../login/LoginService.dart';
+import 'package:flutterdashboard/login/Login.dart';
+import 'package:flutterdashboard/login/LoginService.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
@@ -20,11 +22,16 @@ class SplashScreenView extends StatefulWidget {
 // ignore: camel_case_types
 class _SplashScreenViewState extends State<SplashScreenView> {
   @override
-  void initState() {
-    getToken();
+  void initState() async {
+    var response = await getToken();
     Timer(const Duration(seconds: 1), (() {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const NavigationBarAtLoginView()));
+      if (Login.applicationID == 0) {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (_) => const NavigationBarAtLoginView()));
+      } else {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (_) => const NavigationBarView()));
+      }
     }));
     super.initState();
   }

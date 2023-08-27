@@ -7,80 +7,80 @@ import 'package:http/http.dart' as http;
 
 import 'ProductCategory.dart';
 
-class ProductcategoryService {
-  static Future<List<Productcategory>> get() async {
+class ProductCategoryService {
+  static Future<List<ProductCategory>> get() async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productcategory', request_BODY: ''}";
     return await callAll(postData);
   }
 
-  static Future<List<Productcategory>> getAll() async {
+  static Future<List<ProductCategory>> getAll() async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productcategory/all', request_BODY: ''}";
     return await callAll(postData);
   }
 
-  static Future<Productcategory> getOne(id) async {
+  static Future<ProductCategory> getOne(id) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productcategory/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<Productcategory> add(data) async {
+  static Future<ProductCategory> add(data) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productcategory', request_BODY: $data}";
     return await call(postData);
   }
 
-  static Future<Productcategory> update(data, id) async {
+  static Future<ProductCategory> update(data, id) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'productcategory/ $id', request_BODY: $data}";
     return await call(postData);
   }
 
-  static Future<List<Productcategory>> updateAll(data) async {
+  static Future<List<ProductCategory>> updateAll(data) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'productcategory', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<Productcategory> delete(id) async {
+  static Future<ProductCategory> delete(id) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'DELETE', request_URI: 'productcategory/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<Productcategory> remove(id) async {
+  static Future<ProductCategory> remove(id) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productcategory/remove/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
-  static Future<List<Productcategory>> search(data) async {
+  static Future<List<ProductCategory>> search(data) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productcategory/search', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Productcategory>> searchAll(data) async {
+  static Future<List<ProductCategory>> searchAll(data) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productcategory/search/all', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Productcategory>> advancedSearch(data) async {
+  static Future<List<ProductCategory>> advancedSearch(data) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productcategory/advancedsearch', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Productcategory>> advancedSearchAll(data) async {
+  static Future<List<ProductCategory>> advancedSearchAll(data) async {
     var postData =
         "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productcategory/advancedsearch/all', request_BODY: $data}";
     return await callAll(postData);
   }
 
-  static Future<List<Productcategory>> callAll(String postData) async {
+  static Future<List<ProductCategory>> callAll(String postData) async {
     dynamic responseJson;
     try {
       final response = await http.post(
@@ -106,11 +106,11 @@ class ProductcategoryService {
 
     final parsed = responseJson.cast<Map<String, dynamic>>();
     return parsed
-        .map<Productcategory>((json) => Productcategory.fromJson(json))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
         .toList();
   }
 
-  static Future<Productcategory> call(String postData) async {
+  static Future<ProductCategory> call(String postData) async {
     dynamic responseJson;
     try {
       final response = await http.post(
@@ -134,6 +134,6 @@ class ProductcategoryService {
       throw FetchDataException('No Internet Connection');
     }
 
-    return Productcategory.fromJson(responseJson);
+    return ProductCategory.fromJson(responseJson);
   }
 }
