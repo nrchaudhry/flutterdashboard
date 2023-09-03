@@ -7,7 +7,7 @@ import '../../product/productitem/ProductItem.dart';
 class Transporttruck {
   final int transporttruckID;
   final int productitemID;
-  final Productitem productitemDETAIL;
+  final ProductItem productitemDETAIL;
   final String transporttruckNO;
   final String truckregistrationDATE;
   final String transporttruckLOADWEIGHT;
@@ -27,7 +27,7 @@ class Transporttruck {
     return Transporttruck(
       transporttruckID: json['transporttruck_ID'],
       productitemID: json['productitem_ID'],
-      productitemDETAIL:Productitem.fromJson(jsonDecode(json['productitem_DETAIL'])),
+      productitemDETAIL:ProductItem.fromJson(jsonDecode(json['productitem_DETAIL'])),
       transporttruckNO: json['transporttruck_NO'],
       truckregistrationDATE: json['truckregistration_DATE'],
       transporttruckLOADWEIGHT: json['transporttruck_LOADWEIGHT'],

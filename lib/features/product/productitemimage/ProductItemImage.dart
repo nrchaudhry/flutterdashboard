@@ -22,7 +22,7 @@ class Productitemimage {
       productitemimageID: json['productitemimage_ID'],
       productitemID: json[' productitem_ID'],
       productitemDETAIL:
-          "Productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
+          "ProductItem.fromJson(jsonDecode(json['productitem_DETAIL']))",
       productitemimagePATH: json['productitemimage_PATH'],
       isactive: json['isactive'],
     );

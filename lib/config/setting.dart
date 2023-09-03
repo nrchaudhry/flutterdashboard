@@ -39,3 +39,4 @@ List<Highlight> highlightItems = [
 ];
 
 //flutter run -d chrome --web-renderer html
+//export PATH="$PATH:~/Downloads/flutter/bin"

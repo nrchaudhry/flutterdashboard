@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import '../product/Product.dart';
 
-class Productitem {
+class ProductItem {
   final int productitemID;
   // final int applicationID;
   // final Application applicationDETAIL;
   final int productID;
   final Product productDETAIL;
-  final int productitemNAME;
-  final int productitemDESC;
-  final int productitemIMAGE;
+  final dynamic productitemNAME;
+  final dynamic productitemDESC;
+  final dynamic productitemIMAGE;
   final String isactive;
 
-  const Productitem({
+  const ProductItem({
     required this.productitemID,
     // required this.applicationID,
     // required this.applicationDETAIL,
@@ -25,8 +25,8 @@ class Productitem {
     required this.isactive,
   });
 
-  factory Productitem.fromJson(Map<String, dynamic> json) {
-    return Productitem(
+  factory ProductItem.fromJson(Map<String, dynamic> json) {
+    return ProductItem(
       productitemID: json['productitem_ID'],
       // applicationID: json['application_ID'],
       // applicationDETAIL: Application.fromJson(jsonDecode(json['application_DETAIL'])),

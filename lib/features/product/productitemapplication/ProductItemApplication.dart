@@ -27,7 +27,7 @@ class Productitemapplication {
           "Application.fromJson(jsonDecode(json['application_DETAIL']))",
       productitemID: json['productitem_ID'],
       productitemDETAIL:
-          "Productitem.fromJson(jsonDecode(json['productitem_DETAIL']))",
+          "ProductItem.fromJson(jsonDecode(json['productitem_DETAIL']))",
       isactive: json['isactive'],
     );
   }

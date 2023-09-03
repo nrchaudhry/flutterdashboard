@@ -70,7 +70,7 @@ class ProductCategoryService {
 
   static Future<List<ProductCategory>> advancedSearch(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productcategory/advancedsearch', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'POST', request_URI: 'productcategory/advancedsearch', request_BODY: '$data'}";
     return await callAll(postData);
   }
 

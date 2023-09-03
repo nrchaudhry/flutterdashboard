@@ -28,7 +28,7 @@ class Productitemattributevalue {
       productitemattributevalueID: json['productitemattributevalue_ID'],
       productitemID: json['productitem_ID'],
       productitemDETAIL:
-          "Productitem.fromJson(jsonDecode(json[' productitem_DETAIL']))",
+          "ProductItem.fromJson(jsonDecode(json[' productitem_DETAIL']))",
       productattributeID: json[' productattribute_ID'],
       productattributeDETAIL:
           " Productattribute.fromJson(jsonDecode(json[' productattribute_DETAIL']))",

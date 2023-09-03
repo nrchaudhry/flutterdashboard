@@ -12,7 +12,7 @@ class Productattribute {
   final int productID;
   final Product productDETAIL;
   final int productcategoryID;
-  final Productcategory productcategoryDETAIL;
+  final ProductCategory productcategoryDETAIL;
   final int attributecategoryID;
   final Attributecategory attributecategoryDETAIL;
   final String attributeorderNo;
@@ -41,7 +41,7 @@ class Productattribute {
       productDETAIL: Product.fromJson(jsonDecode(json['product_DETAIL'])),
       productcategoryID: json['productcategory_ID'],
       productcategoryDETAIL:
-          Productcategory.fromJson(jsonDecode(json['productcategory_DETAIL'])),
+          ProductCategory.fromJson(jsonDecode(json['productcategory_DETAIL'])),
       attributecategoryID: json['attributecategory_ID'],
       attributecategoryDETAIL: Attributecategory.fromJson(
           jsonDecode(json['attributecategory_DETAIL'])),

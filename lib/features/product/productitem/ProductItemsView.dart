@@ -3,25 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/header/HeaderView.dart';
+import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 
-import 'ProductCategoryController.dart';
-import 'ProductCategory.dart';
-import 'ProductCategoriesWidget.dart';
+import 'ProductItemController.dart';
+import 'ProductItem.dart';
+import 'ProductItemsWidget.dart';
 
-class ProductCategoriesView extends StatefulWidget {
-  const ProductCategoriesView({super.key});
+class ProductItemsView extends StatefulWidget {
+  const ProductItemsView({super.key});
 
   @override
-  State<ProductCategoriesView> createState() => _ProductCategoriesViewState();
+  State<ProductItemsView> createState() => _ProductItemsViewState();
 }
 
-class _ProductCategoriesViewState extends State<ProductCategoriesView> {
-  late Future<List<ProductCategory>> productcategory;
+class _ProductItemsViewState extends State<ProductItemsView> {
+  late Future<List<ProductItem>> productitem;
 
   @override
   void initState() {
     super.initState();
-    productcategory = ProductCategoryController.productcategoryAdvancedSearch();
+    productitem = ProductItemController.productitemGet();
   }
 
   @override
@@ -30,7 +31,7 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Product Category - $headerTitle',
+            'Product Item - $headerTitle',
             //  textAlign: TextAlign.right,
           ),
         ),
@@ -43,13 +44,14 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
         ],
       ),
       drawer: const HeaderView(),
+      bottomNavigationBar: const NavigationBarView(),
       body: Padding(
         padding: const EdgeInsets.only(top: 8),
-        child: FutureBuilder<List<ProductCategory>>(
-          future: productcategory,
+        child: FutureBuilder<List<ProductItem>>(
+          future: productitem,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return ProductCategoryList(productcategories: snapshot.data!);
+              return ProductItemList(productitems: snapshot.data!);
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');
             }

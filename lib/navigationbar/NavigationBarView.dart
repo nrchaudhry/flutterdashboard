@@ -7,6 +7,7 @@ import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/features/dashboard/DashboardView.dart';
 import 'package:flutterdashboard/features/product/productcategory/ProductCategoriesView.dart';
+import 'package:flutterdashboard/features/product/productitem/ProductItemsView.dart';
 
 class NavigationBarView extends StatefulWidget {
   const NavigationBarView({super.key});
@@ -21,8 +22,9 @@ class _NavigationBarViewState extends State<NavigationBarView> {
   int cindex = 0;
   int active = 0;
   final screens = const [
-    DashboardView(),
     ProductCategoriesView(),
+    ProductItemsView(),
+    DashboardView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,9 +55,17 @@ class _NavigationBarViewState extends State<NavigationBarView> {
           ),
           NavigationDestination(
             icon: Icon(Icons.newspaper),
-            label: 'ProductCategory',
+            label: 'Product Category',
             selectedIcon: Icon(
               Icons.newspaper,
+              color: Colors.white,
+            ),
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.production_quantity_limits_rounded),
+            label: 'Product Item',
+            selectedIcon: Icon(
+              Icons.production_quantity_limits_rounded,
               color: Colors.white,
             ),
           ),
