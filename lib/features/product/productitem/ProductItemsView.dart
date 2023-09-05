@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/header/HeaderView.dart';
-import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 
 import 'ProductItemController.dart';
 import 'ProductItem.dart';
@@ -44,7 +43,15 @@ class _ProductItemsViewState extends State<ProductItemsView> {
         ],
       ),
       drawer: const HeaderView(),
-      bottomNavigationBar: const NavigationBarView(),
+//      bottomNavigationBar: const NavigationBarView(),
+      // bottomNavigationBar: NavigationBarView(
+      //   currentIndex: _currentIndex,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _currentIndex = index;
+      //     });
+      //   },
+      // ),
       body: Padding(
         padding: const EdgeInsets.only(top: 8),
         child: FutureBuilder<List<ProductItem>>(

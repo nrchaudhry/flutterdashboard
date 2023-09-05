@@ -1,15 +1,14 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutterdashboard/features/product/productitem/ProductItemsView.dart';
-import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
+import 'package:flutterdashboard/mainscreen.dart';
 
 Widget productCategoryPromoCard(BuildContext context, image, text) {
   return InkWell(
       onTap: () { 
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-                builder: (_) => const ProductItemsView()));
+                builder: (_) => const MainScreen(currentIndex: 2)));
         //const ProductItemsView();
       },
 //    aspectRatio: 2.62 / 3,

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/navigationbar/atlogin/NavigationBarAtLoginView.dart';
-import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
+import 'package:flutterdashboard/mainscreen.dart';
 
 import 'package:flutterdashboard/login/Login.dart';
 import 'package:flutterdashboard/login/LoginService.dart';
@@ -30,7 +30,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
             MaterialPageRoute(builder: (_) => const NavigationBarAtLoginView()));
       } else {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (_) => const NavigationBarView()));
+            MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 0)));
       }
     }));
     super.initState();

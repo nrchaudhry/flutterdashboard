@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdashboard/config/theme.dart';
 
 import 'package:flutterdashboard/header/HeaderView.dart';
-import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
+import 'package:flutterdashboard/mainscreen.dart';
 import 'package:flutterdashboard/config/setting.dart';
 
 import 'SignupView.dart';
@@ -224,14 +224,16 @@ class _LoginViewState extends State<LoginView> {
                               emailController.text.toString(),
                               passwordController.text.toString());
                           if (response == true) {
+                            // ignore: use_build_context_synchronously
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (_) => NavigationBarView()));
+                                    builder: (_) => const MainScreen(currentIndex: 0)));
                           } else {
                             const snackBar = SnackBar(
                               content: Text('Invalid User Name/Password!'),
                               backgroundColor: (kSecondaryColor),
                             );
+                            // ignore: use_build_context_synchronously
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           }
