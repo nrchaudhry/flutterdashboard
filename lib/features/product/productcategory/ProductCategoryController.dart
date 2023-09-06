@@ -12,7 +12,7 @@ class ProductCategoryController {
 
   static Future<List<ProductCategory>> productcategoryAdvancedSearch() async {
     var search  = {
-      'productcategoryparent_ID': 99
+      'productcategoryparent_ID': 1
     };
     return await ProductCategoryService.advancedSearch(search);
   }

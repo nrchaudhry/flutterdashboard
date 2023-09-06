@@ -30,7 +30,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
             MaterialPageRoute(builder: (_) => const NavigationBarAtLoginView()));
       } else {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 0)));
+            MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 0, previousIndex: 0)));
       }
     }));
     super.initState();

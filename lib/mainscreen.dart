@@ -11,23 +11,25 @@ import 'package:flutterdashboard/features/product/productitem/ProductItemsView.d
 
 class MainScreen extends StatefulWidget {
   final int currentIndex;
+  final int previousIndex;
 
-  const MainScreen({super.key, required this.currentIndex});
+  const MainScreen({super.key, required this.currentIndex, required this.previousIndex});
 
   @override
   // ignore: no_logic_in_create_state
-  _MainScreenState createState() => _MainScreenState(currentIndex);
+  _MainScreenState createState() => _MainScreenState(currentIndex, previousIndex);
 }
 
 class _MainScreenState extends State<MainScreen> {
   int currentIndex;
+  int previousIndex;
   final List<Widget> _screens = [
     const ProductCategoriesView(),
     const ProductItemsView(),
     const DashboardView(),
   ];
 
-  _MainScreenState(this.currentIndex);
+  _MainScreenState(this.currentIndex, this.previousIndex);
 
   @override
   Widget build(BuildContext context) {

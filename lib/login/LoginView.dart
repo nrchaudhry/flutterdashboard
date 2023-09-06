@@ -227,7 +227,7 @@ class _LoginViewState extends State<LoginView> {
                             // ignore: use_build_context_synchronously
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (_) => const MainScreen(currentIndex: 0)));
+                                    builder: (_) => const MainScreen(currentIndex: 0, previousIndex: 0)));
                           } else {
                             const snackBar = SnackBar(
                               content: Text('Invalid User Name/Password!'),

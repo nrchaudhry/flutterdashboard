@@ -8,7 +8,7 @@ Widget productCategoryPromoCard(BuildContext context, image, text) {
       onTap: () { 
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-                builder: (_) => const MainScreen(currentIndex: 2)));
+                builder: (_) => const MainScreen(currentIndex: 1, previousIndex: 0)));
         //const ProductItemsView();
       },
 //    aspectRatio: 2.62 / 3,
