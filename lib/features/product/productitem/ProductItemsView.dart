@@ -9,19 +9,29 @@ import 'ProductItem.dart';
 import 'ProductItemsWidget.dart';
 
 class ProductItemsView extends StatefulWidget {
-  const ProductItemsView({super.key});
+  final int productCategory;
+
+  const ProductItemsView({super.key, required this.productCategory});
 
   @override
-  State<ProductItemsView> createState() => _ProductItemsViewState();
+  // ignore: no_logic_in_create_state
+  State<ProductItemsView> createState() => _ProductItemsViewState(productCategory);
 }
 
 class _ProductItemsViewState extends State<ProductItemsView> {
   late Future<List<ProductItem>> productitem;
+  int productCategory;
+
+  _ProductItemsViewState(this.productCategory);
 
   @override
   void initState() {
     super.initState();
-    productitem = ProductItemController.productitemGet();
+    var search  = {
+      'productcategory_ID': productCategory
+    };
+
+    productitem = ProductItemController.productitemAdvancedSearch(search);
   }
 
   @override

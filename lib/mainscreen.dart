@@ -23,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
   int currentIndex;
   final List<Widget> _screens = [
     const ProductCategoriesView(),
-    const ProductItemsView(),
+    const ProductCategoriesView(),
     const DashboardView(),
   ];
 

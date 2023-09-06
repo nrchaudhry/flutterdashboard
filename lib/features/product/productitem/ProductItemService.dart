@@ -10,73 +10,73 @@ import 'ProductItem.dart';
 class ProductitemService {
   static Future<List<ProductItem>> get() async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem', request_BODY: ''}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'GET', request_URI: 'productitem', request_BODY: ''}";
     return await callAll(postData);
   }
 
   static Future<List<ProductItem>> getAll() async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem/all', request_BODY: ''}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'GET', request_URI: 'productitem/all', request_BODY: ''}";
     return await callAll(postData);
   }
 
   static Future<ProductItem> getOne(id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem/ $id', request_BODY: ''}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'GET', request_URI: 'productitem/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
   static Future<ProductItem> add(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'POST', request_URI: 'productitem', request_BODY: '$data'}";
     return await call(postData);
   }
 
   static Future<ProductItem> update(data, id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'productitem/ $id', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'PUT', request_URI: 'productitem/ $id', request_BODY: '$data'}";
     return await call(postData);
   }
 
   static Future<List<ProductItem>> updateAll(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'PUT', request_URI: 'productitem', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'PUT', request_URI: 'productitem', request_BODY: '$data'}";
     return await callAll(postData);
   }
 
   static Future<ProductItem> delete(id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'DELETE', request_URI: 'productitem/ $id', request_BODY: ''}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'DELETE', request_URI: 'productitem/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
   static Future<ProductItem> remove(id) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'GET', request_URI: 'productitem/remove/ $id', request_BODY: ''}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'GET', request_URI: 'productitem/remove/ $id', request_BODY: ''}";
     return await call(postData);
   }
 
   static Future<List<ProductItem>> search(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/search', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'POST', request_URI: 'productitem/search', request_BODY: '$data'}";
     return await callAll(postData);
   }
 
   static Future<List<ProductItem>> searchAll(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/search/all', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'POST', request_URI: 'productitem/search/all', request_BODY: '$data'}";
     return await callAll(postData);
   }
 
   static Future<List<ProductItem>> advancedSearch(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/advancedsearch', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'POST', request_URI: 'productitem/advancedsearch', request_BODY: '$data'}";
     return await callAll(postData);
   }
 
   static Future<List<ProductItem>> advancedSearchAll(data) async {
     var postData =
-        "{service_NAME: $productserviceNAME, request_TYPE: 'POST', request_URI: 'productitem/advancedsearch/all', request_BODY: $data}";
+        "{service_NAME: '$productserviceNAME', request_TYPE: 'POST', request_URI: 'productitem/advancedsearch/all', request_BODY: '$data'}";
     return await callAll(postData);
   }
 

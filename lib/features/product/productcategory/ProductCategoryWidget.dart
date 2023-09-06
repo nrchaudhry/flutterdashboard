@@ -2,13 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterdashboard/mainscreen.dart';
+import 'package:flutterdashboard/features/product/productitem/ProductItemsView.dart';
 
-Widget productCategoryPromoCard(BuildContext context, image, text) {
+Widget productCategoryPromoCard(BuildContext context, productcategory) {
   return InkWell(
       onTap: () { 
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-                builder: (_) => const MainScreen(currentIndex: 2)));
+                builder: (_) => ProductItemsView(productCategory: productcategory.productcategoryID)));
         //const ProductItemsView();
       },
 //    aspectRatio: 2.62 / 3,
@@ -19,7 +20,7 @@ Widget productCategoryPromoCard(BuildContext context, image, text) {
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(image),
+          image: NetworkImage(productcategory.productcategoryiconURL),
         ),
       ),
       child: Container(
@@ -31,7 +32,7 @@ Widget productCategoryPromoCard(BuildContext context, image, text) {
             TextButton(
               onPressed: () {},
               child: Text(
-                text,
+                productcategory.productcategoryNAME,
                 // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 18,
