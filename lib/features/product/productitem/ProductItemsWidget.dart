@@ -10,10 +10,8 @@ class ProductItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () { 
-        child: Text("Touch me");
-      },
+    return Scaffold(
+      body: SizedBox(
         child: GridView.extent(
           maxCrossAxisExtent: 250,
           padding: const EdgeInsets.all(8),
@@ -22,9 +20,10 @@ class ProductItemList extends StatelessWidget {
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           children: [for (var productitem in productitems)
-            productItemPromoCard(productitem.productDETAIL.producticonURL, productitem.productitemNAME),
+            productItemPromoCard(context, productitem),
           ]
         ),
+      ),
     );
   }
 }

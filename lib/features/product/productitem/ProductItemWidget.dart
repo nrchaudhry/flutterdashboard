@@ -1,10 +1,73 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:flutterdashboard/config/theme.dart';
 
-Widget productItemPromoCard(image, text) {
-  return AspectRatio(
-    aspectRatio: 2.62 / 3,
+Widget productItemPromoCard(BuildContext context, productitem) {
+  final formKey = GlobalKey<FormState>();
+  return InkWell(
+    onTap: () { 
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(productitem.productitemNAME),
+            content: Stack(
+              clipBehavior: Clip.none, children: <Widget>[
+                Positioned(
+                  right: -40.0,
+                  top: -40.0,
+                  child: InkResponse(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const CircleAvatar(
+                      backgroundColor: Colors.red,
+                      child: Icon(Icons.close),
+                    ),
+                  ),
+                ),
+                Form(
+                  key: formKey,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(kSecondaryColor)),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text(
+                            'Add to Cart',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      );
+    },
+//    aspectRatio: 2.62 / 3,
     child: Container(
       width: 50,
       margin: const EdgeInsets.only(right: 15.0),
@@ -13,7 +76,7 @@ Widget productItemPromoCard(image, text) {
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(image),
+          image: NetworkImage(productitem.productDETAIL.producticonURL),
         ),
       ),
       child: Container(
@@ -25,7 +88,7 @@ Widget productItemPromoCard(image, text) {
             TextButton(
               onPressed: () {},
               child: Text(
-                text,
+                productitem.productitemNAME,
                 // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 18,
