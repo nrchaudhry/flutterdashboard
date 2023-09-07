@@ -7,7 +7,7 @@ import 'package:flutterdashboard/navigationbar/NavigationBarView.dart';
 
 import 'package:flutterdashboard/features/dashboard/DashboardView.dart';
 import 'package:flutterdashboard/features/product/productcategory/ProductCategoriesView.dart';
-import 'package:flutterdashboard/features/product/productitem/ProductItemsView.dart';
+import 'package:flutterdashboard/features/cart/CartView.dart';
 
 class MainScreen extends StatefulWidget {
   final int currentIndex;
@@ -22,9 +22,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIndex;
   final List<Widget> _screens = [
-    const ProductCategoriesView(),
-    const ProductCategoriesView(),
     const DashboardView(),
+    const ProductCategoriesView(),
+    const CartView(),
   ];
 
   _MainScreenState(this.currentIndex);

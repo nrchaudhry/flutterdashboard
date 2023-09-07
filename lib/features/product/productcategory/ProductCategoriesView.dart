@@ -30,7 +30,7 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Product Category - $headerTitle',
+            'Menu - $headerTitle',
             //  textAlign: TextAlign.right,
           ),
         ),

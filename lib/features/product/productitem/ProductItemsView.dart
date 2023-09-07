@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutterdashboard/config/theme.dart';
 
+import 'package:flutterdashboard/mainscreen.dart';
 import 'package:flutterdashboard/header/HeaderView.dart';
 
 import 'ProductItemController.dart';
@@ -40,7 +41,7 @@ class _ProductItemsViewState extends State<ProductItemsView> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Product Item - $headerTitle',
+            'Menu - $headerTitle',
             //  textAlign: TextAlign.right,
           ),
         ),
@@ -62,6 +63,34 @@ class _ProductItemsViewState extends State<ProductItemsView> {
       //     });
       //   },
       // ),
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 1)));
+                  // Implement the checkout functionality here
+                  // You can navigate to a checkout screen or perform any other action.
+                },
+                child: const Text('Back'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 2)));
+                  // Implement the checkout functionality here
+                  // You can navigate to a checkout screen or perform any other action.
+                },
+                child: const Text('Checkout'),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 8),
         child: FutureBuilder<List<ProductItem>>(

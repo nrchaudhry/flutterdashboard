@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdashboard/config/theme.dart';
 
+import 'package:flutterdashboard/features/cart/CartController.dart';
+
 Widget productItemPromoCard(BuildContext context, productitem) {
   final formKey = GlobalKey<FormState>();
   return InkWell(
@@ -47,6 +49,7 @@ Widget productItemPromoCard(BuildContext context, productitem) {
                               backgroundColor:
                                   MaterialStateProperty.all(kSecondaryColor)),
                           onPressed: () {
+                            CartController.add(productitem);
                             Navigator.of(context).pop();
                           },
                           child: const Text(

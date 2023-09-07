@@ -21,8 +21,8 @@ class NavigationBarView extends StatelessWidget {
           Colors.grey, // Change the unselected button color here
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.location_on), label: 'Product Category'),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Product Item'),
+        BottomNavigationBarItem(icon: Icon(Icons.point_of_sale), label: 'Sales Order'),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
       ],
     );
   }
