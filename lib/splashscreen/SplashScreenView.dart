@@ -22,8 +22,9 @@ class SplashScreenView extends StatefulWidget {
 // ignore: camel_case_types
 class _SplashScreenViewState extends State<SplashScreenView> {
   @override
-  void initState() async {
-    var response = await getToken();
+//  void initState() async {
+//    var response = await getToken();
+  void initState() {
     Timer(const Duration(seconds: 1), (() {
       if (Login.applicationID == 0) {
         Navigator.of(context).pushReplacement(
