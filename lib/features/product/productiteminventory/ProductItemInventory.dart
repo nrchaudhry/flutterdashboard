@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-//import '../university/University.dart';
-
 class Productiteminventory {
   final int productiteminventoryID;
   final int productitemID;

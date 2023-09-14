@@ -1,33 +1,33 @@
 // ignore_for_file: non_constant_identifier_names
 class Productitempricechange {
-  final int productitempricechange_ID;
-  final int productitem_ID;
+  final int productitempricechangeID;
+  final int productitemID;
   final String productitemDETAIL;
-  final int currency_ID;
+  final int currencyID;
   final String currencyDETAIL;
-  final String productitem_PURCHASEPRICE;
-  final String productitem_LASTPURCHASEPRICE;
+  final String productitemPURCHASEPRICE;
+  final String productitemLASTPURCHASEPRICE;
 
   const Productitempricechange({
-    required this.productitempricechange_ID,
-    required this.productitem_ID,
+    required this.productitempricechangeID,
+    required this.productitemID,
     required this.productitemDETAIL,
-    required this.currency_ID,
+    required this.currencyID,
     required this.currencyDETAIL,
-    required this.productitem_PURCHASEPRICE,
-    required this.productitem_LASTPURCHASEPRICE,
+    required this.productitemPURCHASEPRICE,
+    required this.productitemLASTPURCHASEPRICE,
   });
 
   factory Productitempricechange.fromJson(Map<String, dynamic> json) {
     return Productitempricechange(
-      productitempricechange_ID: json['PRODUCTITEMPRICECHANGE_ID'],
-      productitem_ID: json['PRODUCTITEM_ID'],
+      productitempricechangeID: json['productitempricechange_ID'],
+      productitemID: json['productitem_ID'],
       productitemDETAIL:
           "product.fromJson(jsonDecode(json['productitem_DETAIL']))",
-      currency_ID: json['CURRENCY_ID'],
+      currencyID: json['currency_ID'],
       currencyDETAIL: "product.fromJson(jsonDecode(json['currency_DETAIL']))",
-      productitem_PURCHASEPRICE: json['PRODUCTITEM_PURCHASEPRICE'],
-      productitem_LASTPURCHASEPRICE: json['PRODUCTITEM_LASTPURCHASEPRICE'],
+      productitemPURCHASEPRICE: json['productitem_PURCHASEPRICE'],
+      productitemLASTPURCHASEPRICE: json['productitem_LASTPURCHASEPRICE'],
     );
   }
 }

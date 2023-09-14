@@ -1,17 +1,16 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutterdashboard/mainscreen.dart';
 import 'package:flutterdashboard/features/product/productitem/ProductItemsView.dart';
 
 Widget productCategoryPromoCard(BuildContext context, productcategory) {
   return InkWell(
-      onTap: () { 
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-                builder: (_) => ProductItemsView(productCategory: productcategory.productcategoryID)));
-        //const ProductItemsView();
-      },
+    onTap: () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => ProductItemsView(
+              productCategory: productcategory.productcategoryID)));
+      //const ProductItemsView();
+    },
 //    aspectRatio: 2.62 / 3,
     child: Container(
       margin: const EdgeInsets.only(right: 15.0),
