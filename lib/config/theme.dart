@@ -4,18 +4,29 @@ import 'package:flutter/material.dart';
 const headerTitle = "UOG";
 
 Color kPrimaryWhiteColor = Color.fromARGB(255, 245, 242, 242);
-const kPrimaryColor = Color(0xFF3276b1);
-const kSecondaryColor = Color.fromARGB(255, 245, 144, 104);
+// const kPrimaryColor = Color(0xFF3276b1);
+// const kSecondaryColor = Color.fromARGB(255, 245, 144, 104);
+// const kDarkGreyColor = Color(0xFFA8A8A8);
+// const kWhiteColor = Color(0xFFFFFFFF);
+// const kZambeziColor = Color(0xFF5B5B5B);
+// const kBlackColor = Color(0xFF272726);
+// const kTextFieldColor = Color(0xFF979797);
+// Color kBorderTextFieldColor = Color.fromARGB(106, 151, 151, 151);
+// Color kLightWhit = Color.fromARGB(255, 229, 229, 229);
+
+const kPrimaryColor = Color(0xFFe9533c);
+const kSecondaryColor = Color(0xFF59706F);
 const kDarkGreyColor = Color(0xFFA8A8A8);
 const kWhiteColor = Color(0xFFFFFFFF);
 const kZambeziColor = Color(0xFF5B5B5B);
-const kBlackColor = Color(0xFF272726);
+const kBlackColor = Colors.black;
 const kTextFieldColor = Color(0xFF979797);
+Color kBorderTextFieldColor = Color.fromARGB(106, 151, 151, 151);
+Color kLightWhit = Color.fromARGB(255, 229, 229, 229);
+
 Color sPlash1 = Color(0xFF3276b1);
 Color sPlash2 = Color(0xFF3276b1);
 Color black = Color(0xff4C5980);
-Color kBorderTextFieldColor = Color.fromARGB(106, 151, 151, 151);
-Color kLightWhit = Color.fromARGB(255, 229, 229, 229);
 Color splash3 = Colors.orange;
 
 const kDefaultPadding = EdgeInsets.symmetric(horizontal: 30);
