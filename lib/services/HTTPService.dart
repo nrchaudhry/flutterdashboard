@@ -2,29 +2,45 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:flutterdashboard/login/Login.dart';
 
+import 'package:flutterdashboard/config/setting.dart';
 import 'package:flutterdashboard/services/AppException.dart';
 
 class HTTPService {
   static Future<dynamic> call(String postData) async {
     dynamic responseJson;
     try {
-      // final response = await http.post(
-      //   Uri.parse("${Login.applicationservicePATH}apigateway"),
-      //   headers: {
-      //     HttpHeaders.authorizationHeader: 'bearer ${Login.accessToken}',
-      //   },
-      //   body: postData,
-      // );
-
       final response = await http.post(
-        Uri.parse("http://api.cwiztech.com:8079/v1/apigateway"),
+        Uri.parse("${Login.applicationservicePATH}apigateway"),
         headers: {
-          HttpHeaders.authorizationHeader:
-              'bearer 74418764-1024-4666-afc9-db751a814768',
+          HttpHeaders.authorizationHeader: 
+            'bearer ${Login.accessToken}',
+            'ApplicationCode': '$applicationCode',
         },
         body: postData,
       );
+
+      responseJson = returnResponse(response);
+    } on SocketException {
+      throw FetchDataException('No Internet Connection');
+    }
+    return responseJson;
+  }
+
+  static Future<dynamic> callAll(String postData) async {
+    dynamic responseJson;
+    try {
+      final response = await http.post(
+        Uri.parse("${Login.applicationservicePATH}apigateway"),
+        headers: {
+          HttpHeaders.authorizationHeader: 
+            'bearer ${Login.accessToken}',
+            'ApplicationCode': '$applicationCode',
+        },
+        body: postData,
+      );
+
       responseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet Connection');

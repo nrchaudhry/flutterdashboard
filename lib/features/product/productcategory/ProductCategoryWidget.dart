@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutterdashboard/features/product/productitem/ProductItemsView.dart';
 
 Widget productCategoryPromoCard(BuildContext context, productcategory) {
+  print('Image URL: ${productcategory.productcategoryimageURL}');
+  String imageURL = '${productcategory.productcategoryimageURL}'.replaceFirst('thumbnail?', 'uc?export=view&').replaceAll(RegExp(r'&sz=\w+'), '');
+  print('Image URL: $imageURL');
+
   return InkWell(
     onTap: () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -19,7 +23,7 @@ Widget productCategoryPromoCard(BuildContext context, productcategory) {
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(productcategory.productcategoryiconURL),
+          image: NetworkImage(imageURL),
         ),
       ),
       child: Container(

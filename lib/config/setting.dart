@@ -22,6 +22,9 @@ const String productserviceNAME = 'CWIZTECHPRODUCT';
 const String fitnessserviceNAME = 'CWIZTECHFITNESS';
 const String transportserviceNAME = 'MYZFDLTRANSPORT';
 
+const String servicePath = 'cwiztech/';
+const String commonServicePath = 'cwiztech/';
+
 
 class Highlight {
   String thumbnail;

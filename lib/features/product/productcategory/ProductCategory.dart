@@ -5,6 +5,7 @@ class ProductCategory {
   final dynamic productcategoryCODE;
   final dynamic productcategoryNAME;
   final dynamic productcategoryDESC;
+  final dynamic productcategoryimageURL;
   final dynamic productcategoryiconURL;
   final String isactive;
 
@@ -15,6 +16,7 @@ class ProductCategory {
     required this.productcategoryCODE,
     required this.productcategoryNAME,
     required this.productcategoryDESC,
+    required this.productcategoryimageURL,
     required this.productcategoryiconURL,
     required this.isactive,
   });
@@ -27,7 +29,8 @@ class ProductCategory {
       productcategoryCODE: json['productcategory_CODE'],
       productcategoryNAME: json['productcategory_NAME'],
       productcategoryDESC: json['productcategory_DESC'],
-      productcategoryiconURL: json['productcategoryicon_URL'],
+      productcategoryimageURL: json['productcategoryimage_URL'] ?? '',
+      productcategoryiconURL: json['productcategoryicon_URL'] ?? '',
       isactive: json['isactive'],
     );
   }
