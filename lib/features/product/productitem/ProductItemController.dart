@@ -3,15 +3,14 @@ import 'ProductItemService.dart';
 
 class ProductItemController {
   static Future<List<ProductItem>> productitemGet() async {
-    return await ProductitemService.get();
+    return await ProductItemService.get();
   }
 
   static Future<ProductItem> productitemGetOne(id) async {
-    return await ProductitemService.getOne(id);
+    return await ProductItemService.getOne(id);
   }
 
   static Future<List<ProductItem>> productitemAdvancedSearch(search) async {
-    return await ProductitemService.advancedSearch(search);
+    return await ProductItemService.advancedSearch(search);
   }
-
 }

@@ -27,11 +27,11 @@ class _SplashScreenViewState extends State<SplashScreenView> {
 //  void initState() {
     Timer(const Duration(seconds: 1), (() {
       if (Login.applicationID == 0) {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (_) => const NavigationBarAtLoginView()));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (_) => const NavigationBarAtLoginView()));
       } else {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 1)));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (_) => const MainScreen(currentIndex: 1)));
       }
     }));
     super.initState();

@@ -16,7 +16,8 @@ class ProductItemsView extends StatefulWidget {
 
   @override
   // ignore: no_logic_in_create_state
-  State<ProductItemsView> createState() => _ProductItemsViewState(productCategory);
+  State<ProductItemsView> createState() =>
+      _ProductItemsViewState(productCategory);
 }
 
 class _ProductItemsViewState extends State<ProductItemsView> {
@@ -28,9 +29,7 @@ class _ProductItemsViewState extends State<ProductItemsView> {
   @override
   void initState() {
     super.initState();
-    var search  = {
-      'productcategory_ID': productCategory
-    };
+    var search = {'product': 1, 'productcategory_ID': productCategory};
 
     productitem = ProductItemController.productitemAdvancedSearch(search);
   }
@@ -71,8 +70,8 @@ class _ProductItemsViewState extends State<ProductItemsView> {
             children: <Widget>[
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 1)));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (_) => const MainScreen(currentIndex: 1)));
                   // Implement the checkout functionality here
                   // You can navigate to a checkout screen or perform any other action.
                 },
@@ -80,8 +79,8 @@ class _ProductItemsViewState extends State<ProductItemsView> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (_) => const MainScreen(currentIndex: 2)));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (_) => const MainScreen(currentIndex: 2)));
                   // Implement the checkout functionality here
                   // You can navigate to a checkout screen or perform any other action.
                 },

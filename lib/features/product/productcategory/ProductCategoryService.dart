@@ -1,23 +1,23 @@
-import 'dart:io';
 import 'package:flutterdashboard/config/setting.dart';
-import 'package:flutterdashboard/login/Login.dart';
-import 'package:flutterdashboard/services/AppException.dart';
 import 'package:flutterdashboard/services/HTTPService.dart';
-import 'package:http/http.dart' as http;
 
 import 'ProductCategory.dart';
 
 class ProductCategoryService {
   static Future<List<ProductCategory>> get() async {
     var postData =
-        "{request_TYPE: 'GET', request_URI: '${servicePath}${servicePath}productcategory', request_BODY: ''}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+        "{request_TYPE: 'GET', request_URI: '${servicePath}productcategory', request_BODY: ''}";
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
 
   static Future<List<ProductCategory>> getAll() async {
     var postData =
         "{request_TYPE: 'GET', request_URI: '${servicePath}productcategory/all', request_BODY: ''}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
 
   static Future<ProductCategory> getOne(id) async {
@@ -41,7 +41,9 @@ class ProductCategoryService {
   static Future<List<ProductCategory>> updateAll(data) async {
     var postData =
         "{request_TYPE: 'PUT', request_URI: '${servicePath}productcategory', request_BODY: '$data'}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
 
   static Future<ProductCategory> delete(id) async {
@@ -59,25 +61,32 @@ class ProductCategoryService {
   static Future<List<ProductCategory>> search(data) async {
     var postData =
         "{request_TYPE: 'POST', request_URI: '${servicePath}productcategory/search', request_BODY: '$data'}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
 
   static Future<List<ProductCategory>> searchAll(data) async {
     var postData =
         "{request_TYPE: 'POST', request_URI: '${servicePath}productcategory/search/all', request_BODY: '$data'}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
 
   static Future<List<ProductCategory>> advancedSearch(data) async {
     var postData =
         "{request_TYPE: 'POST', request_URI: '${servicePath}productcategory/advancedsearch', request_BODY: '$data'}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
 
   static Future<List<ProductCategory>> advancedSearchAll(data) async {
     var postData =
         "{request_TYPE: 'POST', request_URI: '${servicePath}productcategory/advancedsearch/all', request_BODY: '$data'}";
-    return (await HTTPService.call(postData)).map<ProductCategory>((json) => ProductCategory.fromJson(json)).toList();
+    return (await HTTPService.call(postData))
+        .map<ProductCategory>((json) => ProductCategory.fromJson(json))
+        .toList();
   }
-
 }
